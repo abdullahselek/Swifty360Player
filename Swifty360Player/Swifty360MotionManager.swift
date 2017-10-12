@@ -26,17 +26,75 @@ import CoreMotion
 
 public protocol Swifty360MotionManagement {
 
-    var deviceMotionAvailable: Bool { get set }
-    var deviceMotionActive: Bool { get set }
-    var deviceMotion: CMDeviceMotion { get set }
+    var deviceMotionAvailable: Bool { get }
+    var deviceMotionActive: Bool { get }
+    var deviceMotion: CMDeviceMotion? { get }
 
     func startUpdating(preferredUpdateInterval: TimeInterval) -> NSUUID
-    func stopUpdating(uuid: NSUUID)
+    func stopUpdating(token: NSUUID)
 
 }
 
-open class Swifty360MotionManager {
+open class Swifty360MotionManager: Swifty360MotionManagement {
 
     public static let shared = Swifty360MotionManager()
+
+    internal var observerItems = [NSUUID: Swifty360MotionManagerObserverItem]()
+    internal let motionManager = CMMotionManager()
+    internal static let preferredUpdateInterval = TimeInterval(1.0 / 60.0)
+
+    private init() {
+        motionManager.deviceMotionUpdateInterval = Swifty360MotionManager.preferredUpdateInterval
+    }
+
+    public var deviceMotionAvailable: Bool {
+        return motionManager.isDeviceMotionAvailable
+    }
+
+    public var deviceMotionActive: Bool {
+        return motionManager.isDeviceMotionActive
+    }
+
+    public var deviceMotion: CMDeviceMotion? {
+        return motionManager.deviceMotion
+    }
+
+    public func startUpdating(preferredUpdateInterval: TimeInterval) -> NSUUID {
+        assert(OperationQueue.current == OperationQueue.main, "Swifty360MotionManager should be used on main queue")
+        let previousCount = observerItems.count
+        let observerItem = Swifty360MotionManagerObserverItem(withPreferredUpdateInterval: preferredUpdateInterval)
+        observerItems[observerItem.token] = observerItem
+        motionManager.deviceMotionUpdateInterval = resolvedUpdateInterval()
+        if observerItems.count > 0 && previousCount == 0 {
+            motionManager.startDeviceMotionUpdates()
+        }
+        return observerItem.token
+    }
+
+    public func stopUpdating(token: NSUUID) {
+        assert(OperationQueue.current == OperationQueue.main, "Swifty360MotionManager should be used on main queue")
+        let previousCount = observerItems.count
+        observerItems.removeValue(forKey: token)
+        motionManager.deviceMotionUpdateInterval = resolvedUpdateInterval()
+        if observerItems.count > 0 && previousCount == 0 {
+            motionManager.stopDeviceMotionUpdates()
+        }
+    }
+
+    internal func numberOfObservers() -> Int {
+        return observerItems.count
+    }
+
+    internal func resolvedUpdateInterval() -> TimeInterval {
+        let observerItemValues = observerItems.values
+        if observerItemValues.isEmpty {
+            return Swifty360MotionManager.preferredUpdateInterval
+        }
+        let item = observerItemValues.min { $0.preferredUpdateInterval > $1.preferredUpdateInterval }
+        if let item = item {
+            return item.preferredUpdateInterval
+        }
+        return Swifty360MotionManager.preferredUpdateInterval
+    }
 
 }

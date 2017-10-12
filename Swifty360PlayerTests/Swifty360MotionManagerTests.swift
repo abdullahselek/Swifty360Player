@@ -28,9 +28,44 @@ import XCTest
 
 class Swifty360MotionManagerTests: XCTestCase {
 
+    var motionManager: Swifty360MotionManager!
+
+    override func setUp() {
+        motionManager = Swifty360MotionManager.shared
+    }
+
+    override func tearDown() {
+        motionManager = nil
+    }
+
     func testInitiation() {
-        let motionManager = Swifty360MotionManager.shared
         XCTAssertNotNil(motionManager)
+    }
+
+    func testDeviceMotionAvailable() {
+        XCTAssertFalse(motionManager.deviceMotionAvailable)
+    }
+
+    func testDeviceMotionActive() {
+        let token = motionManager.startUpdating(preferredUpdateInterval: 1.0)
+        XCTAssertFalse(motionManager.deviceMotionActive)
+        motionManager.stopUpdating(token: token)
+    }
+
+    func testDeviceMotion() {
+        XCTAssertNil(motionManager.deviceMotion)
+    }
+
+    func testStartUpdating() {
+        let token = motionManager.startUpdating(preferredUpdateInterval: 2.0)
+        motionManager.stopUpdating(token: token)
+        XCTAssertNotNil(token)
+    }
+
+    func testStopUpdating() {
+        let token = motionManager.startUpdating(preferredUpdateInterval: 2.0)
+        motionManager.stopUpdating(token: token)
+        XCTAssertEqual(motionManager.observerItems.count, 0)
     }
 
 }

@@ -1,0 +1,6 @@
+ci_service: travis_ci
+coverage_service: coveralls
+workspace: Swifty360Player.xcodeworkspace
+xcodeproj: Swifty360Player.xcodeproj
+scheme: Swifty360Player
+source_directory: Swifty360Player/

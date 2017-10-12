@@ -1,5 +1,5 @@
 //
-//  Swifty360Player.h
+//  Swifty360MotionManager.swift
 //  Swifty360Player
 //
 //  Copyright © 2017 Abdullah Selek. All rights reserved.
@@ -22,14 +22,21 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+import CoreMotion
 
-//! Project version number for Swifty360Player.
-FOUNDATION_EXPORT double Swifty360PlayerVersionNumber;
+public protocol Swifty360MotionManagement {
 
-//! Project version string for Swifty360Player.
-FOUNDATION_EXPORT const unsigned char Swifty360PlayerVersionString[];
+    var deviceMotionAvailable: Bool { get set }
+    var deviceMotionActive: Bool { get set }
+    var deviceMotion: CMDeviceMotion { get set }
 
-// In this header, you should import all the public headers of your framework using statements like #import <Swifty360Player/PublicHeader.h>
+    func startUpdating(preferredUpdateInterval: TimeInterval) -> NSUUID
+    func stopUpdating(uuid: NSUUID)
 
+}
 
+open class Swifty360MotionManager {
+
+    public static let shared = Swifty360MotionManager()
+
+}

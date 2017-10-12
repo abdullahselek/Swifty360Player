@@ -1,5 +1,5 @@
 //
-//  Swifty360Player.h
+//  Swifty360MotionManagerObserverItem.swift
 //  Swifty360Player
 //
 //  Copyright © 2017 Abdullah Selek. All rights reserved.
@@ -22,14 +22,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+open class Swifty360MotionManagerObserverItem {
 
-//! Project version number for Swifty360Player.
-FOUNDATION_EXPORT double Swifty360PlayerVersionNumber;
+    open let token: NSUUID
+    open let preferredUpdateInterval: TimeInterval
 
-//! Project version string for Swifty360Player.
-FOUNDATION_EXPORT const unsigned char Swifty360PlayerVersionString[];
+    public init(withPreferredUpdateInterval interval: TimeInterval) {
+        self.token = NSUUID()
+        self.preferredUpdateInterval = interval
+    }
 
-// In this header, you should import all the public headers of your framework using statements like #import <Swifty360Player/PublicHeader.h>
-
-
+}

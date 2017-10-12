@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1C51B4CE1F8F56D300FD1300 /* Swifty360Player.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C51B4C41F8F56D300FD1300 /* Swifty360Player.framework */; };
-		1C51B4D31F8F56D300FD1300 /* Swifty360PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4D21F8F56D300FD1300 /* Swifty360PlayerTests.swift */; };
 		1C51B4D51F8F56D300FD1300 /* Swifty360Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C51B4C71F8F56D300FD1300 /* Swifty360Player.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C51B4DF1F8F742000FD1300 /* Swifty360MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4DE1F8F742000FD1300 /* Swifty360MotionManager.swift */; };
+		1C51B4E11F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4E01F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift */; };
+		1C51B4E31F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4E21F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift */; };
+		1C51B4E51F8F884700FD1300 /* Swifty360MotionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4E41F8F884700FD1300 /* Swifty360MotionManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +30,11 @@
 		1C51B4C71F8F56D300FD1300 /* Swifty360Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Swifty360Player.h; sourceTree = "<group>"; };
 		1C51B4C81F8F56D300FD1300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C51B4CD1F8F56D300FD1300 /* Swifty360PlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Swifty360PlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C51B4D21F8F56D300FD1300 /* Swifty360PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360PlayerTests.swift; sourceTree = "<group>"; };
 		1C51B4D41F8F56D300FD1300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C51B4DE1F8F742000FD1300 /* Swifty360MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManager.swift; sourceTree = "<group>"; };
+		1C51B4E01F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManagerObserverItem.swift; sourceTree = "<group>"; };
+		1C51B4E21F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManagerObserverItemTests.swift; sourceTree = "<group>"; };
+		1C51B4E41F8F884700FD1300 /* Swifty360MotionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +77,10 @@
 		1C51B4C61F8F56D300FD1300 /* Swifty360Player */ = {
 			isa = PBXGroup;
 			children = (
-				1C51B4C71F8F56D300FD1300 /* Swifty360Player.h */,
 				1C51B4C81F8F56D300FD1300 /* Info.plist */,
+				1C51B4C71F8F56D300FD1300 /* Swifty360Player.h */,
+				1C51B4E01F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift */,
+				1C51B4DE1F8F742000FD1300 /* Swifty360MotionManager.swift */,
 			);
 			path = Swifty360Player;
 			sourceTree = "<group>";
@@ -80,8 +88,9 @@
 		1C51B4D11F8F56D300FD1300 /* Swifty360PlayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				1C51B4D21F8F56D300FD1300 /* Swifty360PlayerTests.swift */,
 				1C51B4D41F8F56D300FD1300 /* Info.plist */,
+				1C51B4E21F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift */,
+				1C51B4E41F8F884700FD1300 /* Swifty360MotionManagerTests.swift */,
 			);
 			path = Swifty360PlayerTests;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					1C51B4C31F8F56D300FD1300 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					1C51B4CC1F8F56D300FD1300 = {
@@ -196,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C51B4E11F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift in Sources */,
+				1C51B4DF1F8F742000FD1300 /* Swifty360MotionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C51B4D31F8F56D300FD1300 /* Swifty360PlayerTests.swift in Sources */,
+				1C51B4E31F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift in Sources */,
+				1C51B4E51F8F884700FD1300 /* Swifty360MotionManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +347,7 @@
 		1C51B4D91F8F56D300FD1300 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abdullahselek.Swifty360Player;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +369,7 @@
 		1C51B4DA1F8F56D300FD1300 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +390,7 @@
 		1C51B4DC1F8F56D300FD1300 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Swifty360PlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +404,7 @@
 		1C51B4DD1F8F56D300FD1300 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Swifty360PlayerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

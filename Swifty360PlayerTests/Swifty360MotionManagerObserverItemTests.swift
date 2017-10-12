@@ -1,6 +1,6 @@
 //
-//  Swifty360Player.h
-//  Swifty360Player
+//  Swifty360MotionManagerObserverItem.swift
+//  Swifty360PlayerTests
 //
 //  Copyright © 2017 Abdullah Selek. All rights reserved.
 //
@@ -22,14 +22,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-#import <UIKit/UIKit.h>
+import XCTest
 
-//! Project version number for Swifty360Player.
-FOUNDATION_EXPORT double Swifty360PlayerVersionNumber;
+@testable import Swifty360Player
 
-//! Project version string for Swifty360Player.
-FOUNDATION_EXPORT const unsigned char Swifty360PlayerVersionString[];
+class Swifty360MotionManagerObserverItemTests: XCTestCase {
+    
+    func testInitiation() {
+        let observerItem = Swifty360MotionManagerObserverItem(withPreferredUpdateInterval: 2.0)
+        XCTAssertNotNil(observerItem)
+    }
 
-// In this header, you should import all the public headers of your framework using statements like #import <Swifty360Player/PublicHeader.h>
-
-
+}

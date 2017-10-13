@@ -75,6 +75,19 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         hasReportedInitialCameraMovement = false
     }
 
+    func startMotionUpdates() {
+        let preferredMotionUpdateInterval = TimeInterval(1.0 / 60.0)
+        motionUpdateToken = motionManager.startUpdating(preferredUpdateInterval: preferredMotionUpdateInterval)
+    }
+
+    func stopMotionUpdates() {
+        guard let motionUpdateToken = self.motionUpdateToken else {
+            return
+        }
+        motionManager.stopUpdating(token: motionUpdateToken)
+        self.motionUpdateToken = nil
+    }
+
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
 
     }

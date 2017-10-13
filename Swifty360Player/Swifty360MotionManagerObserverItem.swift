@@ -24,11 +24,11 @@
 
 open class Swifty360MotionManagerObserverItem {
 
-    open let token: NSUUID
+    open let token: UUID
     open let preferredUpdateInterval: TimeInterval
 
     public init(withPreferredUpdateInterval interval: TimeInterval) {
-        self.token = NSUUID()
+        self.token = UUID()
         self.preferredUpdateInterval = interval
     }
 

@@ -25,6 +25,58 @@
 import SceneKit
 import CoreMotion
 
-open class Swifty360CameraController {
+protocol Swifty360CameraControllerDelegate: class {
+    func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod)
+}
+
+typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
+
+open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
+
+    // public variables
+    weak var delegate: Swifty360CameraControllerDelegate?
+    var compassAngle: Float!
+    var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
+    var panRecognizer: Swifty360CameraPanGestureRecognizer!
+    var allowedDeviceMotionPanningAxes: Swifty360PanningAxis!
+    var allowedPanGesturePanningAxes: Swifty360PanningAxis!
+
+    // private variables
+    internal var view: SCNView!
+    internal var motionManager: Swifty360MotionManagement!
+    internal var motionUpdateToken: UUID?
+    internal var pointOfView: SCNNode!
+    internal var rotateStart: CGPoint!
+    internal var rotateCurrent: CGPoint!
+    internal var rotateDelta: CGPoint!
+    internal var currentPosition: CGPoint!
+    internal var isAnimatingReorientation: Bool!
+    internal var hasReportedInitialCameraMovement: Bool!
+
+    private override init() { }
+
+    init(withView view: SCNView, motionManager: Swifty360MotionManagement) {
+        super.init()
+
+        assert(view.pointOfView != nil, "NYT360CameraController must be initialized with a view with a non-nil pointOfView node.")
+        assert(view.pointOfView?.camera != nil, "NYT360CameraController must be initialized with a view with a non-nil camera node for view.pointOfView.")
+
+        pointOfView = view.pointOfView
+        self.view = view
+        currentPosition = CGPoint(x: 3.14, y: 0.0)
+        allowedDeviceMotionPanningAxes = .all
+        allowedPanGesturePanningAxes = .all
+
+        panRecognizer = Swifty360CameraPanGestureRecognizer(target: self, action: #selector(Swifty360CameraController.handlePan(recognizer:)))
+        panRecognizer.delegate = self
+        self.view.addGestureRecognizer(panRecognizer)
+
+        self.motionManager = motionManager
+        hasReportedInitialCameraMovement = false
+    }
+
+    @objc func handlePan(recognizer: UIPanGestureRecognizer) {
+
+    }
 
 }

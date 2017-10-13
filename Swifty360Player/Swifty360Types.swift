@@ -25,6 +25,7 @@
 public enum Swifty360PanningAxis {
     case horizontal
     case vetical
+    case all
 }
 
 public enum Swifty360UserInteractionMethod {

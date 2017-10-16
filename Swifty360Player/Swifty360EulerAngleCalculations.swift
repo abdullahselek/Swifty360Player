@@ -30,6 +30,8 @@ struct Swifty360EulerAngleCalculationResult {
     var eulerAngles: SCNVector3!
 }
 
+// MARK: Inline Functions
+
 @inline(__always) func Swifty360EulerAngleCalculationResultMake(position: CGPoint, eulerAngles: SCNVector3) -> Swifty360EulerAngleCalculationResult {
     var result = Swifty360EulerAngleCalculationResult()
     result.position = position
@@ -48,4 +50,26 @@ struct Swifty360EulerAngleCalculationResult {
         position.y = 0
     }
     return position
+}
+
+@inline(__always) func Swifty360UnitRotationForCameraRotation(cameraRotation: Float) -> Float {
+    let oneRotation = Float(2.0 * .pi)
+    let rawResult = fmodf(cameraRotation, oneRotation)
+    let accuracy = Float(0.0001)
+    let difference = Float(oneRotation - fabsf(rawResult))
+    let wrappedAround = (difference < accuracy) ? 0 : rawResult
+    return wrappedAround
+}
+
+@inline(__always) func Swifty360Clamp(x: CGFloat, low: CGFloat, high: CGFloat) -> CGFloat {
+    return (((x) > (high)) ? (high) : (((x) < (low)) ? (low) : (x)))
+}
+
+// MARK: Calculations
+
+func Swifty360UpdatedPositionAndAnglesForAllowedAxes(position: CGPoint,
+                                                     allowedPanningAxes: Swifty360PanningAxis) -> Swifty360EulerAngleCalculationResult {
+    let position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
+    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    return Swifty360EulerAngleCalculationResult(position: position, eulerAngles: eulerAngles)
 }

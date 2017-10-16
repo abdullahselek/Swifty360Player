@@ -30,7 +30,15 @@ struct Swifty360EulerAngleCalculationResult {
     var eulerAngles: SCNVector3!
 }
 
+let Swifty360EulerAngleCalculationNoiseThresholdDefault = CGFloat(0.12)
+let Swifty360EulerAngleCalculationDefaultReferenceCompassAngle = Float(3.14)
+
 let Swifty360EulerAngleCalculationRotationRateDampingFactor = Double(0.02)
+let Swifty360EulerAngleCalculationYFovDefault = CGFloat(60.0)
+let Swifty360EulerAngleCalculationYFovMin = CGFloat(40.0)
+let Swifty360EulerAngleCalculationYFovMax = CGFloat(120.0)
+let Swifty360EulerAngleCalculationYFovFunctionSlope = CGFloat(-33.01365882011044)
+let Swifty360EulerAngleCalculationYFovFunctionConstant = CGFloat(118.599244406)
 
 // MARK: Inline Functions
 
@@ -109,4 +117,34 @@ func Swifty360DeviceMotionCalculation(position: CGPoint,
 
     let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
     return Swifty360EulerAngleCalculationResultMake(position: position, eulerAngles: eulerAngles)
+}
+
+func Swifty360PanGestureChangeCalculation(position: CGPoint,
+                                          rotateDelta: CGPoint,
+                                          viewSize: CGSize,
+                                          allowedPanningAxes: Swifty360PanningAxis) -> Swifty360EulerAngleCalculationResult {
+    // The y multiplier is 0.4 and not 0.5 because 0.5 felt too uncomfortable.
+    var position = CGPoint(x: position.x + 2 * .pi * rotateDelta.x / viewSize.width * 0.5,
+                           y: position.y + 2 * .pi * rotateDelta.y / viewSize.height * 0.4)
+    position.y = Swifty360Clamp(x: position.y, low: -.pi / 2, high: .pi / 2)
+    position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
+    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    return Swifty360EulerAngleCalculationResultMake(position: position, eulerAngles: eulerAngles)
+}
+
+func Swifty360OptimalYFovForViewSize(viewSize: CGSize) -> CGFloat {
+    var yFov: CGFloat!
+    if viewSize.height > 0 {
+        let ratio = viewSize.width / viewSize.height
+        let slope = Swifty360EulerAngleCalculationYFovFunctionSlope
+        yFov = (slope * ratio) + Swifty360EulerAngleCalculationYFovFunctionConstant
+        yFov = min(max(yFov, Swifty360EulerAngleCalculationYFovMin), Swifty360EulerAngleCalculationYFovMax)
+    } else {
+        yFov = Swifty360EulerAngleCalculationYFovDefault
+    }
+    return yFov
+}
+
+func Swifty360CompassAngleForEulerAngles(eulerAngles: SCNVector3) -> Float {
+    return Swifty360UnitRotationForCameraRotation(cameraRotation: (-1.0 * eulerAngles.y) + Swifty360EulerAngleCalculationDefaultReferenceCompassAngle)
 }

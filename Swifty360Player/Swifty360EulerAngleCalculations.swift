@@ -30,6 +30,8 @@ struct Swifty360EulerAngleCalculationResult {
     var eulerAngles: SCNVector3!
 }
 
+let Swifty360EulerAngleCalculationRotationRateDampingFactor = Double(0.02)
+
 // MARK: Inline Functions
 
 @inline(__always) func Swifty360EulerAngleCalculationResultMake(position: CGPoint, eulerAngles: SCNVector3) -> Swifty360EulerAngleCalculationResult {
@@ -72,4 +74,39 @@ func Swifty360UpdatedPositionAndAnglesForAllowedAxes(position: CGPoint,
     let position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
     let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
     return Swifty360EulerAngleCalculationResult(position: position, eulerAngles: eulerAngles)
+}
+
+func Swifty360DeviceMotionCalculation(position: CGPoint,
+                                      rotationRate: CMRotationRate,
+                                      orientation: UIInterfaceOrientation,
+                                      allowedPanningAxes: Swifty360PanningAxis,
+                                      noiseThreshold: Double) -> Swifty360EulerAngleCalculationResult {
+    var rotationRate = rotationRate
+
+    if fabs(rotationRate.x) < noiseThreshold {
+        rotationRate.x = 0
+    }
+    if fabs(rotationRate.y) < noiseThreshold {
+        rotationRate.y = 0
+    }
+
+    var position: CGPoint!
+    if UIInterfaceOrientationIsLandscape(orientation) {
+        if orientation == .landscapeLeft {
+            position = CGPoint(x: position.x + CGFloat(rotationRate.x * Swifty360EulerAngleCalculationRotationRateDampingFactor * -1),
+                               y: position.y + CGFloat(rotationRate.y * Swifty360EulerAngleCalculationRotationRateDampingFactor))
+        } else {
+            position = CGPoint(x: position.x + CGFloat(rotationRate.x * Swifty360EulerAngleCalculationRotationRateDampingFactor),
+                                   y: position.y + CGFloat(rotationRate.y * Swifty360EulerAngleCalculationRotationRateDampingFactor * -1))
+        }
+    } else {
+        position = CGPoint(x: position.x + CGFloat(rotationRate.y * Swifty360EulerAngleCalculationRotationRateDampingFactor),
+                           y: position.y - CGFloat(rotationRate.x * Swifty360EulerAngleCalculationRotationRateDampingFactor * -1))
+    }
+    position = CGPoint(x: position.x,
+                       y: Swifty360Clamp(x: position.y, low: -.pi / 2, high: .pi / 2))
+    position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
+
+    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    return Swifty360EulerAngleCalculationResultMake(position: position, eulerAngles: eulerAngles)
 }

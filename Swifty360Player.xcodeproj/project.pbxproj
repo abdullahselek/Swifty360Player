@@ -18,6 +18,7 @@
 		1C51B4E31F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4E21F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift */; };
 		1C51B4E51F8F884700FD1300 /* Swifty360MotionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B4E41F8F884700FD1300 /* Swifty360MotionManagerTests.swift */; };
 		1CD2A5351F99E68200419DCF /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2A5341F99E68200419DCF /* SwiftySKVideoNode.swift */; };
+		1CD2A5371F99FA8600419DCF /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2A5361F99FA8600419DCF /* Float++.swift */; };
 		A449C3361F92480C002482F0 /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449C3351F92480C002482F0 /* Swifty360EulerAngleCalculations.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		1C51B4E21F8F775600FD1300 /* Swifty360MotionManagerObserverItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManagerObserverItemTests.swift; sourceTree = "<group>"; };
 		1C51B4E41F8F884700FD1300 /* Swifty360MotionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360MotionManagerTests.swift; sourceTree = "<group>"; };
 		1CD2A5341F99E68200419DCF /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftySKVideoNode.swift; sourceTree = "<group>"; };
+		1CD2A5361F99FA8600419DCF /* Float++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float++.swift"; sourceTree = "<group>"; };
 		A449C3351F92480C002482F0 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				A449C3351F92480C002482F0 /* Swifty360EulerAngleCalculations.swift */,
 				1C45AE8D1F95F14D00E431DE /* Swifty360PlayerScene.swift */,
 				1CD2A5341F99E68200419DCF /* SwiftySKVideoNode.swift */,
+				1CD2A5361F99FA8600419DCF /* Float++.swift */,
 			);
 			path = Swifty360Player;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C17260B1F90C48700259C86 /* Swifty360CameraPanGestureRecognizer.swift in Sources */,
+				1CD2A5371F99FA8600419DCF /* Float++.swift in Sources */,
 				1C51B4E11F8F767200FD1300 /* Swifty360MotionManagerObserverItem.swift in Sources */,
 				1C17260D1F90C54D00259C86 /* Swifty360CameraController.swift in Sources */,
 				1CD2A5351F99E68200419DCF /* SwiftySKVideoNode.swift in Sources */,

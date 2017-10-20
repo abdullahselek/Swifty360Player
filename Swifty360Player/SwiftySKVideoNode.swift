@@ -1,5 +1,5 @@
 //
-//  Swifty360PlayerScene.swift
+//  SwiftySKVideoNode.swift
 //  Swifty360Player
 //
 //  Copyright © 2017 Abdullah Selek. All rights reserved.
@@ -22,32 +22,25 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import SceneKit
+import SpriteKit
 import AVFoundation
 
-open class Swifty360PlayerScene: SCNScene {
-
-    open let camera = SCNCamera()
-    private var videoPlaybackIsPaused: Bool!
-    private var cameraNode: SCNNode!
-    private var player: AVPlayer!
-
-    public init(withAVPlayer player: AVPlayer, view: SCNView) {
-        super.init()
-        self.videoPlaybackIsPaused = true
-        self.player = player
-    }
-
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+public protocol SwiftySKVideoNodeDelegate: class {
+    func videoNodeShouldAllowPlaybackToBegin(videoNode: SwiftySKVideoNode) -> Bool
 }
 
-extension Swifty360PlayerScene: SwiftySKVideoNodeDelegate {
+open class SwiftySKVideoNode: SKVideoNode {
 
-    public func videoNodeShouldAllowPlaybackToBegin(videoNode: SwiftySKVideoNode) -> Bool {
-        return !self.videoPlaybackIsPaused
+    weak var swiftyDelegate: SwiftySKVideoNodeDelegate?
+
+    func setPaused(paused: Bool) {
+        if !paused && swiftyDelegate != nil {
+            if swiftyDelegate!.videoNodeShouldAllowPlaybackToBegin(videoNode: self) {
+                super.play()
+            }
+        } else {
+            super.pause()
+        }
     }
 
 }

@@ -43,7 +43,11 @@ open class Swifty360PlayerScene: SCNScene {
         self.videoPlaybackIsPaused = true
         self.player = player
         self.rootNode.addChildNode(self.cameraNode)
-
+        let scene = getScene()
+        scene.addChild(getVideoNode(withPlayer: self.player, scene: scene))
+        self.rootNode.addChildNode(getSphereNode(scene: scene))
+        view.scene = self
+        view.pointOfView = cameraNode
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -70,6 +74,17 @@ open class Swifty360PlayerScene: SCNScene {
         videoNode.xScale = -1
         videoNode.swiftyDelegate = self
         return videoNode
+    }
+
+    internal func getSphereNode(scene: SKScene) -> SCNNode {
+        let sphereNode = SCNNode()
+        sphereNode.position = SCNVector3Make(0.0, 0.0, 0.0)
+        sphereNode.geometry = SCNSphere(radius: 100.0)
+        sphereNode.geometry?.firstMaterial?.diffuse.contents = scene
+        sphereNode.geometry?.firstMaterial?.diffuse.minificationFilter = .linear
+        sphereNode.geometry?.firstMaterial?.diffuse.magnificationFilter = .linear
+        sphereNode.geometry?.firstMaterial?.isDoubleSided = true
+        return sphereNode
     }
 
 }

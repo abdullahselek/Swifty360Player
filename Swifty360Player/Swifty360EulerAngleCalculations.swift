@@ -80,7 +80,7 @@ let Swifty360EulerAngleCalculationYFovFunctionConstant = CGFloat(118.599244406)
 func Swifty360UpdatedPositionAndAnglesForAllowedAxes(position: CGPoint,
                                                      allowedPanningAxes: Swifty360PanningAxis) -> Swifty360EulerAngleCalculationResult {
     let position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
-    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    let eulerAngles = SCNVector3Make(position.y.getFloat(), position.x.getFloat(), 0)
     return Swifty360EulerAngleCalculationResult(position: position, eulerAngles: eulerAngles)
 }
 
@@ -115,7 +115,7 @@ func Swifty360DeviceMotionCalculation(position: CGPoint,
                        y: Swifty360Clamp(x: position.y, low: -.pi / 2, high: .pi / 2))
     position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
 
-    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    let eulerAngles = SCNVector3Make(position.y.getFloat(), position.x.getFloat(), 0)
     return Swifty360EulerAngleCalculationResultMake(position: position, eulerAngles: eulerAngles)
 }
 
@@ -128,7 +128,7 @@ func Swifty360PanGestureChangeCalculation(position: CGPoint,
                            y: position.y + 2 * .pi * rotateDelta.y / viewSize.height * 0.4)
     position.y = Swifty360Clamp(x: position.y, low: -.pi / 2, high: .pi / 2)
     position = Swifty360AdjustPositionForAllowedAxes(position: position, allowedPanningAxes: allowedPanningAxes)
-    let eulerAngles = SCNVector3Make(Float(position.y), Float(position.x), 0)
+    let eulerAngles = SCNVector3Make(position.y.getFloat(), position.x.getFloat(), 0)
     return Swifty360EulerAngleCalculationResultMake(position: position, eulerAngles: eulerAngles)
 }
 

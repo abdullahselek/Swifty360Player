@@ -91,4 +91,77 @@ class Swifty360EulerAngleCalculationsTests: XCTestCase {
         XCTAssertNotEqual(result.position.y, position.y)
     }
 
+
+    func testDeviceMotionFunctionShouldFilterOutPositiveXRotationNoise() {
+        let position = CGPoint(x: 100, y: 100)
+        var rate = CMRotationRate()
+        rate.x = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * 0.5
+        rate.y = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * 2
+        rate.z = 10
+        let orientation: UIInterfaceOrientation = .landscapeLeft
+        let result = Swifty360DeviceMotionCalculation(position: position,
+                                                      rotationRate: rate,
+                                                      orientation: orientation,
+                                                      allowedPanningAxes: .horizontal,
+                                                      noiseThreshold: Double(Swifty360EulerAngleCalculationNoiseThresholdDefault))
+        XCTAssertEqual(result.position.x, position.x)
+        XCTAssertNotEqual(result.position.y, position.y)
+    }
+
+    func testDeviceMotionFunctionShouldFilterOutNegativeYRotationNoise() {
+        let position = CGPoint(x: 100, y: 100)
+        var rate = CMRotationRate()
+        rate.x = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * 2
+        rate.y = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * -0.5
+        rate.z = 10
+        let orientation: UIInterfaceOrientation = .landscapeLeft
+        let result = Swifty360DeviceMotionCalculation(position: position,
+                                                      rotationRate: rate,
+                                                      orientation: orientation,
+                                                      allowedPanningAxes: .horizontal,
+                                                      noiseThreshold: Double(Swifty360EulerAngleCalculationNoiseThresholdDefault))
+        XCTAssertNotEqual(result.position.x, 0)
+        XCTAssertEqual(result.position.y, 0)
+    }
+
+    func testDeviceMotionFunctionShouldFilterOutPositiveYRotationNoise() {
+        let position = CGPoint(x: 100, y: 100)
+        var rate = CMRotationRate()
+        rate.x = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * 2
+        rate.y = Swifty360EulerAngleCalculationNoiseThresholdDefault.getDouble() * 0.5
+        rate.z = 10
+        let orientation: UIInterfaceOrientation = .landscapeLeft
+        let result = Swifty360DeviceMotionCalculation(position: position,
+                                                      rotationRate: rate,
+                                                      orientation: orientation,
+                                                      allowedPanningAxes: .horizontal,
+                                                      noiseThreshold: Double(Swifty360EulerAngleCalculationNoiseThresholdDefault))
+        XCTAssertNotEqual(result.position.x, 0)
+        XCTAssertEqual(result.position.y, 0)
+    }
+
+    func testPanGestureChangeFunctionShouldZeroOutDisallowedYAxis() {
+        let position = CGPoint(x: 100, y: 100)
+        let delta = CGPoint(x: 1000, y: -1000)
+        let viewSize = CGSize(width: 536, height: 320)
+        let result = Swifty360PanGestureChangeCalculation(position: position,
+                                                          rotateDelta: delta,
+                                                          viewSize: viewSize,
+                                                          allowedPanningAxes: .horizontal)
+        XCTAssertNotEqual(result.position.x, 0)
+        XCTAssertEqual(result.position.y, 0)
+    }
+
+    func testPanGestureChangeFunctionShouldZeroOutDisallowedXAxis() {
+        let position = CGPoint(x: 100, y: 100)
+        let delta = CGPoint(x: 1000, y: -1000)
+        let viewSize = CGSize(width: 536, height: 320)
+        let result = Swifty360PanGestureChangeCalculation(position: position,
+                                                          rotateDelta: delta,
+                                                          viewSize: viewSize,
+                                                          allowedPanningAxes: .vertical)
+        XCTAssertEqual(result.position.x, 0)
+        XCTAssertNotEqual(result.position.y, 0)
+    }
+
 }

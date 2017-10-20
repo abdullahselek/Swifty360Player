@@ -30,6 +30,7 @@ open class Swifty360PlayerScene: SCNScene {
 
     open let camera = SCNCamera()
     private var videoPlaybackIsPaused: Bool!
+    private var videoNode: SwiftySKVideoNode!
     private var cameraNode: SCNNode! {
         let cameraNode = SCNNode()
         cameraNode.camera = camera
@@ -44,7 +45,8 @@ open class Swifty360PlayerScene: SCNScene {
         self.player = player
         self.rootNode.addChildNode(self.cameraNode)
         let scene = getScene()
-        scene.addChild(getVideoNode(withPlayer: self.player, scene: scene))
+        videoNode = getVideoNode(withPlayer: self.player, scene: scene)
+        scene.addChild(videoNode)
         self.rootNode.addChildNode(getSphereNode(scene: scene))
         view.scene = self
         view.pointOfView = cameraNode
@@ -52,6 +54,18 @@ open class Swifty360PlayerScene: SCNScene {
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func play() {
+        videoPlaybackIsPaused = false
+        player.play()
+        videoNode.isPaused = false
+    }
+
+    func pause() {
+        videoPlaybackIsPaused = true
+        player.pause()
+        videoNode.isPaused = true
     }
 
     internal func getScene() -> SKScene {

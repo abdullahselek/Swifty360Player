@@ -22,4 +22,8 @@ extension CGFloat {
         return Float(self)
     }
 
+    func getDouble() -> Double {
+        return Double(self)
+    }
+
 }

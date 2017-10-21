@@ -29,6 +29,14 @@ public protocol Swifty360CameraControllerDelegate: class {
     func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod)
 }
 
+@inline(__always) func distance(a: CGPoint, b: CGPoint) -> CGFloat {
+    return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2))
+}
+
+@inline(__always) func subtractPoints(a: CGPoint, b: CGPoint) -> CGPoint {
+    return CGPoint(x: b.x - a.x, y: b.y - a.y)
+}
+
 typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
 
 open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
@@ -89,7 +97,36 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     }
 
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
+        if self.isAnimatingReorientation {
+            return
+        }
 
+        let point = recognizer.location(in: view)
+        switch recognizer.state {
+        case .began:
+            rotateStart = point
+        case .changed:
+            rotateCurrent = point
+            rotateDelta = subtractPoints(a: self.rotateStart, b: self.rotateCurrent)
+            rotateStart = rotateCurrent
+            let result = Swifty360PanGestureChangeCalculation(position: currentPosition,
+                                                              rotateDelta: rotateDelta,
+                                                              viewSize: view.bounds.size,
+                                                              allowedPanningAxes: allowedPanGesturePanningAxes)
+            currentPosition = result.position
+            pointOfView.eulerAngles = result.eulerAngles
+            compassAngleUpdateBlock?(compassAngle)
+            reportInitialCameraMovementIfNeeded(withMethod: .touch)
+        default:
+            break
+        }
+    }
+
+    func reportInitialCameraMovementIfNeeded(withMethod method: Swifty360UserInteractionMethod) {
+        if !hasReportedInitialCameraMovement {
+            hasReportedInitialCameraMovement = true
+            delegate?.cameraController(controller: self, cameraMovedViewMethod: method)
+        }
     }
 
 }

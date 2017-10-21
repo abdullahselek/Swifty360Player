@@ -164,4 +164,15 @@ class Swifty360EulerAngleCalculationsTests: XCTestCase {
         XCTAssertNotEqual(result.position.y, 0)
     }
 
+    func testItCalculatesTheOptimalYFovForAVarietyOfInputs() {
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 568, height: 320)), 60.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 1024, height: 768)), 74.6, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 320, height: 568)), 100.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 16000, height: 1)), 40.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 1, height: 16000)), 120.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 0, height: 0)), 60.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 1, height: 0)), 60.0, accuracy: 2.0)
+        XCTAssertEqual(Swifty360OptimalYFovForViewSize(viewSize: CGSize(width: 0, height: 1)), 120.0, accuracy: 2.0)
+    }
+
 }

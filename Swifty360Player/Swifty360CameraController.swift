@@ -43,7 +43,6 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 
     // public variables
     weak var delegate: Swifty360CameraControllerDelegate?
-    var compassAngle: Float!
     var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
     var panRecognizer: Swifty360CameraPanGestureRecognizer!
     var allowedDeviceMotionPanningAxes: Swifty360PanningAxis!
@@ -60,6 +59,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     internal var currentPosition: CGPoint!
     internal var isAnimatingReorientation: Bool!
     internal var hasReportedInitialCameraMovement: Bool!
+    internal static let minimalRotationDistanceToReport = CGFloat(0.75)
 
     private override init() { }
 
@@ -96,6 +96,10 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         self.motionUpdateToken = nil
     }
 
+    func compassAngle() -> Float {
+        return Swifty360CompassAngleForEulerAngles(eulerAngles: pointOfView.eulerAngles)
+    }
+
     @objc func handlePan(recognizer: UIPanGestureRecognizer) {
         if self.isAnimatingReorientation {
             return
@@ -115,10 +119,56 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
                                                               allowedPanningAxes: allowedPanGesturePanningAxes)
             currentPosition = result.position
             pointOfView.eulerAngles = result.eulerAngles
-            compassAngleUpdateBlock?(compassAngle)
+            compassAngleUpdateBlock?(compassAngle())
             reportInitialCameraMovementIfNeeded(withMethod: .touch)
         default:
             break
+        }
+    }
+
+    func updateCameraAngleForCurrentDeviceMotion() {
+        if isAnimatingReorientation {
+            return
+        }
+
+        guard let rotationRate = motionManager.deviceMotion?.rotationRate else {
+            return
+        }
+        let orientation =  UIApplication.shared.statusBarOrientation
+        let result = Swifty360DeviceMotionCalculation(position: currentPosition,
+                                                      rotationRate: rotationRate,
+                                                      orientation: orientation,
+                                                      allowedPanningAxes: allowedDeviceMotionPanningAxes,
+                                                      noiseThreshold: Double(Swifty360EulerAngleCalculationNoiseThresholdDefault))
+        currentPosition = result.position
+        pointOfView.eulerAngles = result.eulerAngles
+        compassAngleUpdateBlock?(compassAngle())
+
+        if distance(a: CGPoint.zero, b: currentPosition) > Swifty360CameraController.minimalRotationDistanceToReport {
+            reportInitialCameraMovementIfNeeded(withMethod: .gyroscope)
+        }
+    }
+
+    func updateCameraFOV(withViewSize viewSize: CGSize) {
+        pointOfView.camera?.yFov = Swifty360OptimalYFovForViewSize(viewSize: viewSize).getDouble()
+    }
+
+    func reorientVerticalCameraAngleToHorizon(animated: Bool) {
+        if animated {
+            isAnimatingReorientation = true
+            SCNTransaction.begin()
+            SCNTransaction.animationDuration = CATransaction.animationDuration()
+        }
+
+        currentPosition.y = 0
+        pointOfView.eulerAngles.x = 0
+
+        if animated {
+            SCNTransaction.completionBlock = {
+                SCNTransaction.animationDuration = 0
+                self.isAnimatingReorientation = false
+                SCNTransaction.commit()
+            }
         }
     }
 

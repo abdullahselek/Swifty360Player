@@ -45,8 +45,41 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     weak var delegate: Swifty360CameraControllerDelegate?
     var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
     var panRecognizer: Swifty360CameraPanGestureRecognizer!
-    var allowedDeviceMotionPanningAxes: Swifty360PanningAxis!
-    var allowedPanGesturePanningAxes: Swifty360PanningAxis!
+    // Stored property
+    private var deviceMotionPanningAxes: Swifty360PanningAxis!
+    // Computed Property
+    var allowedDeviceMotionPanningAxes: Swifty360PanningAxis! {
+        set {
+            if deviceMotionPanningAxes != newValue {
+                deviceMotionPanningAxes = newValue
+                let result = Swifty360UpdatedPositionAndAnglesForAllowedAxes(position: self.currentPosition,
+                                                                             allowedPanningAxes: deviceMotionPanningAxes)
+                currentPosition = result.position
+                pointOfView.eulerAngles = result.eulerAngles
+            }
+        }
+        get {
+            return deviceMotionPanningAxes
+        }
+    }
+    // Stored property
+    private var panGesturePanningAxes: Swifty360PanningAxis!
+    // Computed Property
+    var allowedPanGesturePanningAxes: Swifty360PanningAxis! {
+        set {
+            if panGesturePanningAxes != newValue {
+                panGesturePanningAxes = newValue
+                let result = Swifty360UpdatedPositionAndAnglesForAllowedAxes(position: self.currentPosition,
+                                                                             allowedPanningAxes: panGesturePanningAxes)
+                currentPosition = result.position
+                pointOfView.eulerAngles = result.eulerAngles
+            }
+
+        }
+        get {
+            return panGesturePanningAxes
+        }
+    }
 
     // private variables
     internal var view: SCNView!

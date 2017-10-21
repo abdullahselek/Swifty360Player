@@ -25,7 +25,7 @@
 import SceneKit
 import CoreMotion
 
-protocol Swifty360CameraControllerDelegate: class {
+public protocol Swifty360CameraControllerDelegate: class {
     func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod)
 }
 

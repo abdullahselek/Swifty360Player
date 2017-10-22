@@ -22,6 +22,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+/**
+ An otherwise vanilla subclass of UIPanGestureRecognizer used by Swifty360Player to enable manual camera panning.
+
+ This class is exposed so that host applications can more easily configure interaction with other gesture
+ recognizers, without having to refer to specific instances of an Swifty360Player gesture recognizer.
+ */
 open class Swifty360CameraPanGestureRecognizer: UIPanGestureRecognizer {
 
 }

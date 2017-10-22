@@ -26,6 +26,14 @@ import SceneKit
 import CoreMotion
 
 public protocol Swifty360CameraControllerDelegate: class {
+    /**
+     Called the first time the user moves the camera.
+
+     - Note: This method is called synchronously when the camera angle is updated; an implementation should return quickly to avoid performance implications.
+
+     - Parameter controller: The camera controller with which the user interacted.
+     - Parameter method: The method by which the user moved the camera.
+     */
     func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController,
                                  cameraMovedViewMethod: Swifty360UserInteractionMethod)
 }
@@ -38,12 +46,24 @@ public protocol Swifty360CameraControllerDelegate: class {
     return CGPoint(x: b.x - a.x, y: b.y - a.y)
 }
 
+/**
+ The block type used for compass angle updates.
+
+ - Parameter compassAngle: The compass angle in radians.
+ */
 public typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
 
 open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 
-    // public variables
+    /**
+     The delegate of the controller.
+     */
     open weak var delegate: Swifty360CameraControllerDelegate?
+    /**
+     A block invoked whenever the compass angle has been updated.
+
+     - Note: This method is called synchronously from SCNSceneRendererDelegate. Its implementation should return quickly to avoid performance implications.
+     */
     open var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
     open var panRecognizer: Swifty360CameraPanGestureRecognizer!
     // Stored property
@@ -97,6 +117,17 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 
     private override init() { }
 
+    /**
+     Designated initializer.
+
+     - Parameter view: The view whose camera Swifty360CameraController will manage.
+
+     - Parameter motionManager: A class conforming to Swifty360MotionManagement. Ideally the
+     same motion manager should be shared throughout an application, since multiple
+     active managers can degrade performance.
+
+     - SeeAlso: `Swifty360MotionManagement`
+     */
     init(withView view: SCNView, motionManager: Swifty360MotionManagement) {
         super.init()
 
@@ -130,6 +161,9 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         self.motionUpdateToken = nil
     }
 
+    /**
+     Returns the current compass angle in radians
+     */
     func compassAngle() -> Float {
         return Swifty360CompassAngleForEulerAngles(eulerAngles: pointOfView.eulerAngles)
     }
@@ -160,6 +194,10 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         }
     }
 
+    /**
+     Updates the camera angle based on the current device motion. It's assumed that this method will be called
+     many times a second during SceneKit rendering updates.
+     */
     func updateCameraAngleForCurrentDeviceMotion() {
         if isAnimatingReorientation {
             return
@@ -183,10 +221,20 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         }
     }
 
+    /**
+     Updates the yFov of the camera to provide the optimal viewing angle for a given view size. Portrait videos will use a wider angle than landscape videos.
+
+     - Parameter viewSize: `Swifty360ViewController` view size
+     */
     func updateCameraFOV(withViewSize viewSize: CGSize) {
         pointOfView.camera?.yFov = Swifty360OptimalYFovForViewSize(viewSize: viewSize).getDouble()
     }
 
+    /**
+     Reorients the camera's vertical angle component so it's pointing directly at the horizon.
+
+     - Parameter animated: Passing `YES` will animate the change with a standard duration.
+     */
     func reorientVerticalCameraAngleToHorizon(animated: Bool) {
         if animated {
             isAnimatingReorientation = true

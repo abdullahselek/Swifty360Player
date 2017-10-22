@@ -183,7 +183,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     }
 
     public func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {
-
+        delegate?.userInitallyMovedCameraViaMethod(withViewController: self, method: cameraMovedViewMethod)
     }
 
     deinit {
@@ -193,5 +193,9 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 }
 
 extension Swifty360ViewController: SCNSceneRendererDelegate {
+
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        cameraController.updateCameraAngleForCurrentDeviceMotion()
+    }
 
 }

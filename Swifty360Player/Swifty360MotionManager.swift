@@ -24,28 +24,90 @@
 
 import CoreMotion
 
+/**
+ Expectations that must be fulfilled by an appliation-wide "wrapper" around
+ CMMotionManager for Swifty360Player's use.
+
+ Per Apple's documentation, it is recommended that an application will have no
+ more than one `CMMotionManager`, otherwise performance could degrade.
+
+ A host application is free to provide a custom class conforming to
+ `Swifty360MotionManagement`. If your application does not use a CMMotionManager
+ outside of Swifty360Player, I recommend that you use the shared instance of
+ `Swifty360MotionManager`, a ready-made class that already conforms to
+ `Swifty360MotionManagement`.
+ */
 public protocol Swifty360MotionManagement {
 
+    /**
+     Determines whether device motion hardware and APIs are available.
+     */
     var deviceMotionAvailable: Bool { get }
+    /**
+     Determines whether the receiver is currently providing motion updates.
+     */
     var deviceMotionActive: Bool { get }
+    /**
+     Returns the latest sample of device motion data, or nil if none is available.
+     */
     var deviceMotion: CMDeviceMotion? { get }
 
+    /**
+     Begins updating device motion, if it hasn't begun already.
+
+     - Parameter preferredUpdateInterval: The requested update interval. The actual
+     interval used should resolve to the shortest requested interval among the
+     active requests.
+
+     - Returns: A token which the caller should use to balance this call with a
+     call to `stopUpdating`.
+
+     - Warning: Callers should balance a call to `startUpdating` with a call to
+     `stopUpdating`, otherwise device motion will continue to be updated indefinitely.
+     */
     func startUpdating(preferredUpdateInterval: TimeInterval) -> UUID
+    /**
+     Requests that device motion updates be stopped. If there are other active
+     observers that still require device motion updates, motion updates will not be
+     stopped.
+
+     The device motion update interval may be raised or lowered after a call to
+     `stopUpdating`, as the interval will resolve to the shortest interval among
+     the active observers.
+
+     - Parameter token: The token received from a call to `startUpdating`.
+
+     - Warning: Callers should balance a call to `startUpdating` with a call to
+     `stopUpdating`, otherwise device motion will continue to be updated indefinitely.
+     */
     func stopUpdating(token: UUID)
 
 }
 
+/**
+ A reference implementation of `Swifty360MotionManagement`. Your host application
+ can provide another implementation if so desired.
+
+ - SeeAlso: `Swifty360ViewController`.
+ */
 open class Swifty360MotionManager: Swifty360MotionManagement {
 
+    /**
+     The shared, app-wide `Swifty360MotionManager`.
+     */
     public static let shared = Swifty360MotionManager()
 
     internal var observerItems = [UUID: Swifty360MotionManagerObserverItem]()
     internal let motionManager = CMMotionManager()
     internal static let preferredUpdateInterval = TimeInterval(1.0 / 60.0)
 
+    // MARK: Init
+
     private init() {
         motionManager.deviceMotionUpdateInterval = Swifty360MotionManager.preferredUpdateInterval
     }
+
+    // MARK: Swifty360MotionManagement
 
     public var deviceMotionAvailable: Bool {
         return motionManager.isDeviceMotionAvailable
@@ -80,6 +142,8 @@ open class Swifty360MotionManager: Swifty360MotionManagement {
             motionManager.stopDeviceMotionUpdates()
         }
     }
+
+    // MARK: Internal
 
     internal func numberOfObservers() -> Int {
         return observerItems.count

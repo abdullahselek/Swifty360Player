@@ -99,8 +99,8 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     init(withView view: SCNView, motionManager: Swifty360MotionManagement) {
         super.init()
 
-        assert(view.pointOfView != nil, "NYT360CameraController must be initialized with a view with a non-nil pointOfView node.")
-        assert(view.pointOfView?.camera != nil, "NYT360CameraController must be initialized with a view with a non-nil camera node for view.pointOfView.")
+        assert(view.pointOfView != nil, "Swifty360CameraController must be initialized with a view with a non-nil pointOfView node.")
+        assert(view.pointOfView?.camera != nil, "Swifty360CameraController must be initialized with a view with a non-nil camera node for view.pointOfView.")
 
         pointOfView = view.pointOfView
         self.view = view

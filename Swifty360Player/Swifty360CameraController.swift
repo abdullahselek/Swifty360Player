@@ -37,7 +37,7 @@ public protocol Swifty360CameraControllerDelegate: class {
     return CGPoint(x: b.x - a.x, y: b.y - a.y)
 }
 
-typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
+public typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
 
 open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 

@@ -31,6 +31,35 @@ public protocol Swifty360ViewControllerDelegate: class {
     func userInitallyMovedCameraViaMethod(withViewController: Swifty360ViewController, method: Swifty360UserInteractionMethod)
 }
 
+@inline(__always) func Swifty360ViewControllerSceneFrameForContainingBounds(containingBounds: CGRect, underlyingSceneSize: CGSize) -> CGRect {
+    if underlyingSceneSize.equalTo(CGSize.zero) {
+        return containingBounds
+    }
+
+    let containingSize = containingBounds.size
+    let heightRatio = containingSize.height / underlyingSceneSize.height
+    let widthRatio = containingSize.width / underlyingSceneSize.width
+    var targetSize: CGSize!
+    if heightRatio > widthRatio {
+        targetSize = CGSize(width: underlyingSceneSize.width * heightRatio, height: underlyingSceneSize.height * heightRatio)
+    } else {
+        targetSize = CGSize(width: underlyingSceneSize.width * widthRatio, height: underlyingSceneSize.height * widthRatio)
+    }
+
+    var targetFrame = CGRect.zero
+    targetFrame.size = targetSize
+    targetFrame.origin.x = (containingBounds.size.width - targetSize.width) / 2.0
+    targetFrame.origin.y = (containingBounds.size.height - targetSize.height) / 2.0
+
+    return targetFrame
+}
+
+@inline(__always) func Swifty360ViewControllerSceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
+    let maxValue = max(screenBounds.size.width, screenBounds.size.height)
+    let minValue = min(screenBounds.size.width, screenBounds.size.height)
+    return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
+}
+
 open class Swifty360ViewController: UIViewController, Swifty360CameraControllerDelegate {
 
     open weak var delegate: Swifty360ViewControllerDelegate?
@@ -85,6 +114,54 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = UIColor.black
+        view.isOpaque = true
+
+        /// Prevent the edges of the "aspect-fill" resized player scene from being
+        /// visible beyond the bounds of self.view.
+        view.clipsToBounds = true
+
+        sceneView.backgroundColor = UIColor.black
+        sceneView.isOpaque = true
+        sceneView.delegate = self
+        view.addSubview(sceneView)
+
+        sceneView.isPlaying = true
+
+        cameraController.updateCameraFOV(withViewSize: view.bounds.size)
+    }
+
+    override open func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        sceneView.frame = Swifty360ViewControllerSceneFrameForContainingBounds(containingBounds: view.bounds,
+                                                                               underlyingSceneSize: underlyingSceneSize)
+    }
+
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        cameraController.startMotionUpdates()
+    }
+
+    open override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        cameraController.startMotionUpdates()
+    }
+
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { context in
+            SCNTransaction.animationDuration = coordinator.transitionDuration
+            self.cameraController.updateCameraFOV(withViewSize: size)
+        }) { context in
+            if !context.isCancelled {
+                SCNTransaction.animationDuration = 0
+            }
+        }
     }
 
     open func play() {

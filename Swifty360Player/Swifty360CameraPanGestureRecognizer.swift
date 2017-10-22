@@ -22,6 +22,6 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-class Swifty360CameraPanGestureRecognizer: UIPanGestureRecognizer {
+open class Swifty360CameraPanGestureRecognizer: UIPanGestureRecognizer {
 
 }

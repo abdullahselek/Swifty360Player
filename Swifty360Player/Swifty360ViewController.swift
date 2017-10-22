@@ -36,14 +36,18 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     open weak var delegate: Swifty360ViewControllerDelegate?
     open var player: AVPlayer!
     open var motionManager: Swifty360MotionManagement!
+    open var compassAngle: Float!
+    open var panRecognizer: Swifty360CameraPanGestureRecognizer!
+    open var allowedDeviceMotionPanningAxes: Swifty360PanningAxis = .all
+    open var allowedPanGesturePanningAxes: Swifty360PanningAxis = .all
+
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!
     private var playerScene: Swifty360PlayerScene!
     private var cameraController: Swifty360CameraController!
 
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
+    public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement) {
+        super.init(nibName: nil, bundle: nil)
         let screenBounds = UIScreen.main.bounds
         let initialSceneFrame = sceneBoundsForScreenBounds(screenBounds: screenBounds)
         underlyingSceneSize = initialSceneFrame.size
@@ -51,6 +55,26 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         playerScene = Swifty360PlayerScene(withAVPlayer: player, view: sceneView)
         cameraController = Swifty360CameraController(withView: sceneView, motionManager: motionManager)
         cameraController.delegate = self
+        weak var weakSelf = self
+        cameraController.compassAngleUpdateBlock = { compassAngle in
+            guard let strongSelf = weakSelf else {
+                return
+            }
+            strongSelf.delegate?.didUpdateCompassAngle(withViewController: strongSelf,
+                                                       compassAngle: strongSelf.compassAngle)
+        }
+    }
+
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    open func play() {
+        playerScene.play()
+    }
+
+    open func pause() {
+        playerScene.pause()
     }
 
     internal func sceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
@@ -61,6 +85,10 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     public func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {
 
+    }
+
+    deinit {
+        sceneView.delegate = nil
     }
 
 }

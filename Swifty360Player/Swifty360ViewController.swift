@@ -36,10 +36,28 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     open weak var delegate: Swifty360ViewControllerDelegate?
     open var player: AVPlayer!
     open var motionManager: Swifty360MotionManagement!
-    open var compassAngle: Float!
-    open var panRecognizer: Swifty360CameraPanGestureRecognizer!
-    open var allowedDeviceMotionPanningAxes: Swifty360PanningAxis = .all
-    open var allowedPanGesturePanningAxes: Swifty360PanningAxis = .all
+    open var compassAngle: Float! {
+        return cameraController.compassAngle()
+    }
+    open var panRecognizer: Swifty360CameraPanGestureRecognizer! {
+        return cameraController.panRecognizer
+    }
+    open var allowedDeviceMotionPanningAxes: Swifty360PanningAxis {
+        set {
+            cameraController.allowedDeviceMotionPanningAxes = newValue
+        }
+        get {
+            return cameraController.allowedDeviceMotionPanningAxes
+        }
+    }
+    open var allowedPanGesturePanningAxes: Swifty360PanningAxis {
+        set {
+            cameraController.allowedPanGesturePanningAxes = newValue
+        }
+        get {
+            return cameraController.allowedPanGesturePanningAxes
+        }
+    }
 
     private var underlyingSceneSize: CGSize!
     private var sceneView: SCNView!
@@ -75,6 +93,10 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     open func pause() {
         playerScene.pause()
+    }
+
+    open func reorientVerticalCameraAngleToHorizon(animated: Bool) {
+        cameraController.reorientVerticalCameraAngleToHorizon(animated: animated)
     }
 
     internal func sceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {

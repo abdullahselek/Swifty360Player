@@ -42,13 +42,13 @@ typealias Swifty360CompassAngleUpdateBlock = (_ compassAngle: Float) -> (Void)
 open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 
     // public variables
-    weak var delegate: Swifty360CameraControllerDelegate?
-    var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
-    var panRecognizer: Swifty360CameraPanGestureRecognizer!
+    open weak var delegate: Swifty360CameraControllerDelegate?
+    open var compassAngleUpdateBlock: Swifty360CompassAngleUpdateBlock?
+    open var panRecognizer: Swifty360CameraPanGestureRecognizer!
     // Stored property
     private var deviceMotionPanningAxes: Swifty360PanningAxis!
     // Computed Property
-    var allowedDeviceMotionPanningAxes: Swifty360PanningAxis! {
+    open var allowedDeviceMotionPanningAxes: Swifty360PanningAxis! {
         set {
             if deviceMotionPanningAxes != newValue {
                 deviceMotionPanningAxes = newValue
@@ -65,7 +65,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     // Stored property
     private var panGesturePanningAxes: Swifty360PanningAxis!
     // Computed Property
-    var allowedPanGesturePanningAxes: Swifty360PanningAxis! {
+    open var allowedPanGesturePanningAxes: Swifty360PanningAxis! {
         set {
             if panGesturePanningAxes != newValue {
                 panGesturePanningAxes = newValue

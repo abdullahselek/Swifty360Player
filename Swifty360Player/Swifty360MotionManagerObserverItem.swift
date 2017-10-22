@@ -22,10 +22,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-open class Swifty360MotionManagerObserverItem {
+internal class Swifty360MotionManagerObserverItem {
 
-    open let token: UUID
-    open let preferredUpdateInterval: TimeInterval
+    internal let token: UUID
+    internal let preferredUpdateInterval: TimeInterval
 
     public init(withPreferredUpdateInterval interval: TimeInterval) {
         self.token = UUID()

@@ -26,7 +26,8 @@ import SceneKit
 import CoreMotion
 
 public protocol Swifty360CameraControllerDelegate: class {
-    func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod)
+    func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController,
+                                 cameraMovedViewMethod: Swifty360UserInteractionMethod)
 }
 
 @inline(__always) func distance(a: CGPoint, b: CGPoint) -> CGFloat {
@@ -208,7 +209,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     func reportInitialCameraMovementIfNeeded(withMethod method: Swifty360UserInteractionMethod) {
         if !hasReportedInitialCameraMovement {
             hasReportedInitialCameraMovement = true
-            delegate?.cameraController(controller: self, cameraMovedViewMethod: method)
+            delegate?.userInitallyMovedCamera(withCameraController: self, cameraMovedViewMethod: method)
         }
     }
 

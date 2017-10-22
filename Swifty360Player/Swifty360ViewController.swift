@@ -182,7 +182,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
     }
 
-    public func cameraController(controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {
+    public func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController, cameraMovedViewMethod: Swifty360UserInteractionMethod) {
         delegate?.userInitallyMovedCameraViaMethod(withViewController: self, method: cameraMovedViewMethod)
     }
 

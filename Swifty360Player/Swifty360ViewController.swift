@@ -64,7 +64,6 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     open weak var delegate: Swifty360ViewControllerDelegate?
     open var player: AVPlayer!
-    open var motionManager: Swifty360MotionManagement!
     open var compassAngle: Float! {
         return cameraController.compassAngle()
     }
@@ -149,7 +148,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     open override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        cameraController.startMotionUpdates()
+        cameraController.stopMotionUpdates()
     }
 
     open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -195,7 +194,9 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 extension Swifty360ViewController: SCNSceneRendererDelegate {
 
     public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        cameraController.updateCameraAngleForCurrentDeviceMotion()
+        DispatchQueue.main.async {
+            self.cameraController.updateCameraAngleForCurrentDeviceMotion()
+        }
     }
 
 }

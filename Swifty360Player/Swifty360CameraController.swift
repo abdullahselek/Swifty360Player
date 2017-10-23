@@ -111,8 +111,8 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     internal var rotateCurrent: CGPoint!
     internal var rotateDelta: CGPoint!
     internal var currentPosition: CGPoint!
-    internal var isAnimatingReorientation: Bool!
-    internal var hasReportedInitialCameraMovement: Bool!
+    internal var isAnimatingReorientation = false
+    internal var hasReportedInitialCameraMovement = false
     internal static let minimalRotationDistanceToReport = CGFloat(0.75)
 
     private override init() { }
@@ -249,8 +249,8 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
             SCNTransaction.completionBlock = {
                 SCNTransaction.animationDuration = 0
                 self.isAnimatingReorientation = false
-                SCNTransaction.commit()
             }
+            SCNTransaction.commit()
         }
     }
 

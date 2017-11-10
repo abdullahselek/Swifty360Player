@@ -51,8 +51,8 @@ let Swifty360EulerAngleCalculationYFovFunctionConstant = CGFloat(118.599244406)
 
 @inline(__always) func Swifty360AdjustPositionForAllowedAxes(position: CGPoint, allowedPanningAxes: Swifty360PanningAxis) -> CGPoint {
     var position = position
-    let suppressXaxis = allowedPanningAxes != .horizontal
-    let suppressYaxis = allowedPanningAxes != .vertical
+    let suppressXaxis = (UInt8(allowedPanningAxes.rawValue) & UInt8(Swifty360PanningAxis.horizontal.rawValue)) == 0
+    let suppressYaxis = (UInt8(allowedPanningAxes.rawValue) & UInt8(Swifty360PanningAxis.vertical.rawValue)) == 0
     if suppressXaxis == true {
         position.x = 0
     }

@@ -22,10 +22,14 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-public enum Swifty360PanningAxis {
-    case horizontal
-    case vertical
-    case all
+import Foundation
+
+public struct Swifty360PanningAxis: OptionSet {
+    public let rawValue: UInt
+    public init(rawValue: UInt) { self.rawValue = rawValue }
+
+    static let horizontal = Swifty360PanningAxis(rawValue: 1 << 0)
+    static let vertical = Swifty360PanningAxis(rawValue: 1 << 1)
 }
 
 public enum Swifty360UserInteractionMethod {

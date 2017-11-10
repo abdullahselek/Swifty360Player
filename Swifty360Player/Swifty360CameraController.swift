@@ -137,8 +137,8 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         pointOfView = view.pointOfView
         self.view = view
         currentPosition = CGPoint(x: 3.14, y: 0.0)
-        allowedDeviceMotionPanningAxes = .all
-        allowedPanGesturePanningAxes = .all
+        allowedDeviceMotionPanningAxes = Swifty360PanningAxis(rawValue: Swifty360PanningAxis.horizontal.rawValue | Swifty360PanningAxis.vertical.rawValue)
+        allowedPanGesturePanningAxes = Swifty360PanningAxis(rawValue: Swifty360PanningAxis.horizontal.rawValue | Swifty360PanningAxis.vertical.rawValue)
 
         panRecognizer = Swifty360CameraPanGestureRecognizer(target: self, action: #selector(Swifty360CameraController.handlePan(recognizer:)))
         panRecognizer.delegate = self

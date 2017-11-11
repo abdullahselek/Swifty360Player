@@ -3,13 +3,13 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 
-# Swifty360Player
+# ![Swifty360Player](https://github.com/abdullahselek/Swifty360Player/blob/master/Resources/Swifty360Player.png) Swifty360Player
 
 iOS 360-degree video player streaming from an AVPlayer.
 
 ## Demo
 
-![Swifty360Player Demo](https://github.com/abdullahselek/Swifty360Player/blob/master/Demo/demo.gif)
+![Swifty360Player Demo](https://github.com/abdullahselek/Swifty360Player/blob/master/Resources/demo.gif)
 
 ## Requirements
 

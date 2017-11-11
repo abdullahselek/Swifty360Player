@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AVFoundation
 import AVKit
 import Swifty360Player
 

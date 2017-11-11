@@ -1,0 +1,16 @@
+PODS:
+  - Swifty360Player (0.1)
+
+DEPENDENCIES:
+  - Swifty360Player (from `.`)
+
+EXTERNAL SOURCES:
+  Swifty360Player:
+    :path: "."
+
+SPEC CHECKSUMS:
+  Swifty360Player: e1f87b8512c1f9fafbde5f9b9742c6e8b7f60554
+
+PODFILE CHECKSUM: 42a7ad3b672615519c1095459e88f114feec142c
+
+COCOAPODS: 1.2.1

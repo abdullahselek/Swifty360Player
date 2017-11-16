@@ -64,6 +64,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     open weak var delegate: Swifty360ViewControllerDelegate?
     open var player: AVPlayer!
+    open var motionManager: Swifty360MotionManagement!
     open var compassAngle: Float! {
         return cameraController.compassAngle()
     }
@@ -99,7 +100,8 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         underlyingSceneSize = initialSceneFrame.size
         sceneView = SCNView(frame: initialSceneFrame)
         playerScene = Swifty360PlayerScene(withAVPlayer: player, view: sceneView)
-        cameraController = Swifty360CameraController(withView: sceneView, motionManager: motionManager)
+        self.motionManager = motionManager
+        cameraController = Swifty360CameraController(withView: sceneView, motionManager: self.motionManager)
         cameraController.delegate = self
         weak var weakSelf = self
         cameraController.compassAngleUpdateBlock = { compassAngle in

@@ -93,6 +93,35 @@ Tap Gesture Handler
 }
 ```
 
+Using storyboard and `Swifty360ViewController` as parent class
+
+```
+guard let swifty360ViewController = self.storyboard?.instantiateViewController(withIdentifier: "TestViewController") as? TestViewController else {
+    return
+}
+let videoURL = URL(fileURLWithPath: Bundle.main.path(forResource: "google-help-vr", ofType: "mp4")!)
+let player = AVPlayer(url: videoURL)
+let motionManager = Swifty360MotionManager.shared
+swifty360ViewController.player = player
+swifty360ViewController.motionManager = motionManager
+self.present(swifty360ViewController, animated: true, completion: nil)
+```
+
+```
+import UIKit
+import Swifty360Player
+
+class TestViewController: Swifty360ViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        player.play()
+    }
+
+}
+```
+
 ## License
 
 Swifty360Player is released under the MIT license. See LICENSE for details.

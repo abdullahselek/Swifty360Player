@@ -106,8 +106,8 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     override open func viewDidLoad() {
         super.viewDidLoad()
 
-        assert(player == nil, "Swifty360ViewController should have an AVPlayer instance")
-        assert(motionManager == nil, "Swifty360ViewController should have an Swifty360MotionManager instance")
+        assert(player != nil, "Swifty360ViewController should have an AVPlayer instance")
+        assert(motionManager != nil, "Swifty360ViewController should have an Swifty360MotionManager instance")
 
         setup(player: player, motionManager: motionManager)
 

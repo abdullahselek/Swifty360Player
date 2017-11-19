@@ -122,6 +122,56 @@ class TestViewController: Swifty360ViewController {
 }
 ```
 
+Example use of `Swifty360View` with using code commands
+
+```
+let videoURL = URL(fileURLWithPath: Bundle.main.path(forResource: "google-help-vr", ofType: "mp4")!)
+let player = AVPlayer(url: videoURL)
+
+let motionManager = Swifty360MotionManager.shared
+
+let swifty360View = Swifty360View(withFrame: view.bounds,
+                                  player: player,
+                                  motionManager: motionManager)
+swifty360View.setup(player: player, motionManager: motionManager)
+view.addSubview(swifty360View)
+
+player.play()
+```
+
+Using `Swifty360View` with Storyboard
+
+- Add a `UIView` to your viewcontroller and change it's class as `Swifty360View`
+- Connect via IBOutlets
+
+and 
+
+```
+let videoURL = URL(fileURLWithPath: Bundle.main.path(forResource: "google-help-vr", ofType: "mp4")!)
+let player = AVPlayer(url: videoURL)
+
+let motionManager = Swifty360MotionManager.shared
+
+swifty360View.setup(player: player, motionManager: motionManager)
+
+player.play()
+```
+
+Tap gesture recognizers for `Swifty360View`, create one recognizer for your viewcontroller's view
+
+```
+let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reorientVerticalCameraAngle))
+view.addGestureRecognizer(tapGestureRecognizer)
+```
+
+and selector function
+
+```
+@objc func reorientVerticalCameraAngle() {
+    swifty360View.reorientVerticalCameraAngleToHorizon(animated: true)
+}
+```
+
 ## License
 
 Swifty360Player is released under the MIT license. See LICENSE for details.

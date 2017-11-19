@@ -31,6 +31,35 @@ public protocol Swifty360ViewDelegate: class {
     func userInitallyMovedCameraViaMethod(withView: Swifty360View, method: Swifty360UserInteractionMethod)
 }
 
+@inline(__always) func Swifty360ViewSceneFrameForContainingBounds(containingBounds: CGRect, underlyingSceneSize: CGSize) -> CGRect {
+    if underlyingSceneSize.equalTo(CGSize.zero) {
+        return containingBounds
+    }
+
+    let containingSize = containingBounds.size
+    let heightRatio = containingSize.height / underlyingSceneSize.height
+    let widthRatio = containingSize.width / underlyingSceneSize.width
+    var targetSize: CGSize!
+    if heightRatio > widthRatio {
+        targetSize = CGSize(width: underlyingSceneSize.width * heightRatio, height: underlyingSceneSize.height * heightRatio)
+    } else {
+        targetSize = CGSize(width: underlyingSceneSize.width * widthRatio, height: underlyingSceneSize.height * widthRatio)
+    }
+
+    var targetFrame = CGRect.zero
+    targetFrame.size = targetSize
+    targetFrame.origin.x = (containingBounds.size.width - targetSize.width) / 2.0
+    targetFrame.origin.y = (containingBounds.size.height - targetSize.height) / 2.0
+
+    return targetFrame
+}
+
+@inline(__always) func Swifty360ViewSceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
+    let maxValue = max(screenBounds.size.width, screenBounds.size.height)
+    let minValue = min(screenBounds.size.width, screenBounds.size.height)
+    return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
+}
+
 open class Swifty360View: UIView {
 
     open weak var delegate: Swifty360ViewDelegate?

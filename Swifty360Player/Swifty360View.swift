@@ -105,22 +105,7 @@ open class Swifty360View: UIView {
         super.init(coder: aDecoder)
     }
 
-    override open func didMoveToSuperview() {
-        super.didMoveToSuperview()
-
-        assert(player != nil, "Swifty360View should have an AVPlayer instance")
-        assert(motionManager != nil, "Swifty360View should have an Swifty360MotionManager instance")
-
-        setup(player: player, motionManager: motionManager)
-    }
-
-    internal func sceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
-        let maxValue = max(screenBounds.size.width, screenBounds.size.height)
-        let minValue = min(screenBounds.size.width, screenBounds.size.height)
-        return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
-    }
-
-    internal func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
+    open func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
         let initialSceneFrame = sceneBoundsForScreenBounds(screenBounds: bounds)
         underlyingSceneSize = initialSceneFrame.size
         sceneView = SCNView(frame: initialSceneFrame)
@@ -178,6 +163,28 @@ open class Swifty360View: UIView {
                 SCNTransaction.animationDuration = 0
             }
         }
+    }
+
+    open func play() {
+        playerScene.play()
+    }
+
+    open func pause() {
+        playerScene.pause()
+    }
+
+    open func reorientVerticalCameraAngleToHorizon(animated: Bool) {
+        cameraController.reorientVerticalCameraAngleToHorizon(animated: animated)
+    }
+
+    internal func sceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
+        let maxValue = max(screenBounds.size.width, screenBounds.size.height)
+        let minValue = min(screenBounds.size.width, screenBounds.size.height)
+        return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
+    }
+
+    deinit {
+        sceneView.delegate = nil
     }
 
 }

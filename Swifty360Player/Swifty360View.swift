@@ -136,6 +136,22 @@ open class Swifty360View: UIView {
             strongSelf.delegate?.didUpdateCompassAngle(withViewController: strongSelf,
                                                        compassAngle: strongSelf.compassAngle)
         }
+
+        backgroundColor = UIColor.black
+        isOpaque = true
+
+        /// Prevent the edges of the "aspect-fill" resized player scene from being
+        /// visible beyond the bounds of self.view.
+        clipsToBounds = true
+
+        sceneView.backgroundColor = UIColor.black
+        sceneView.isOpaque = true
+        sceneView.delegate = self
+        addSubview(sceneView)
+
+        sceneView.isPlaying = true
+
+        cameraController.updateCameraFOV(withViewSize: bounds.size)
     }
 
 }
@@ -145,6 +161,16 @@ extension Swifty360View: Swifty360CameraControllerDelegate {
     public func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController,
                                         cameraMovedViewMethod: Swifty360UserInteractionMethod) {
         delegate?.userInitallyMovedCameraViaMethod(withView: self, method: cameraMovedViewMethod)
+    }
+
+}
+
+extension Swifty360View: SCNSceneRendererDelegate {
+
+    public func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.cameraController.updateCameraAngleForCurrentDeviceMotion()
+        }
     }
 
 }

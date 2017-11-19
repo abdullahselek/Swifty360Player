@@ -65,6 +65,33 @@ open class Swifty360View: UIView {
     open weak var delegate: Swifty360ViewDelegate?
     open var player: AVPlayer!
     open var motionManager: Swifty360MotionManagement!
+    open var compassAngle: Float! {
+        return cameraController.compassAngle()
+    }
+    open var panRecognizer: Swifty360CameraPanGestureRecognizer! {
+        return cameraController.panRecognizer
+    }
+    open var allowedDeviceMotionPanningAxes: Swifty360PanningAxis {
+        set {
+            cameraController.allowedDeviceMotionPanningAxes = newValue
+        }
+        get {
+            return cameraController.allowedDeviceMotionPanningAxes
+        }
+    }
+    open var allowedPanGesturePanningAxes: Swifty360PanningAxis {
+        set {
+            cameraController.allowedPanGesturePanningAxes = newValue
+        }
+        get {
+            return cameraController.allowedPanGesturePanningAxes
+        }
+    }
+
+    private var underlyingSceneSize: CGSize!
+    private var sceneView: SCNView!
+    private var playerScene: Swifty360PlayerScene!
+    private var cameraController: Swifty360CameraController!
 
     public init(withFrame frame: CGRect,
                 player: AVPlayer,
@@ -83,6 +110,41 @@ open class Swifty360View: UIView {
 
         assert(player != nil, "Swifty360View should have an AVPlayer instance")
         assert(motionManager != nil, "Swifty360View should have an Swifty360MotionManager instance")
+
+        setup(player: player, motionManager: motionManager)
+    }
+
+    internal func sceneBoundsForScreenBounds(screenBounds: CGRect) -> CGRect {
+        let maxValue = max(screenBounds.size.width, screenBounds.size.height)
+        let minValue = min(screenBounds.size.width, screenBounds.size.height)
+        return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
+    }
+
+    internal func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
+        let initialSceneFrame = sceneBoundsForScreenBounds(screenBounds: bounds)
+        underlyingSceneSize = initialSceneFrame.size
+        sceneView = SCNView(frame: initialSceneFrame)
+        playerScene = Swifty360PlayerScene(withAVPlayer: player, view: sceneView)
+        self.motionManager = motionManager
+        cameraController = Swifty360CameraController(withView: sceneView, motionManager: self.motionManager)
+        cameraController.delegate = self
+        weak var weakSelf = self
+        cameraController.compassAngleUpdateBlock = { compassAngle in
+            guard let strongSelf = weakSelf else {
+                return
+            }
+            strongSelf.delegate?.didUpdateCompassAngle(withViewController: strongSelf,
+                                                       compassAngle: strongSelf.compassAngle)
+        }
+    }
+
+}
+
+extension Swifty360View: Swifty360CameraControllerDelegate {
+
+    public func userInitallyMovedCamera(withCameraController controller: Swifty360CameraController,
+                                        cameraMovedViewMethod: Swifty360UserInteractionMethod) {
+        delegate?.userInitallyMovedCameraViaMethod(withView: self, method: cameraMovedViewMethod)
     }
 
 }

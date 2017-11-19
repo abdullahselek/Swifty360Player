@@ -154,6 +154,32 @@ open class Swifty360View: UIView {
         cameraController.updateCameraFOV(withViewSize: bounds.size)
     }
 
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        sceneView.frame = Swifty360ViewSceneFrameForContainingBounds(containingBounds: bounds,
+                                                                     underlyingSceneSize: underlyingSceneSize)
+    }
+
+    override open func didMoveToWindow() {
+        super.didMoveToWindow()
+        cameraController.startMotionUpdates()
+    }
+
+    open func stopMotionUpdates() {
+        cameraController.stopMotionUpdates()
+    }
+
+    open func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            SCNTransaction.animationDuration = coordinator.transitionDuration
+            self.cameraController.updateCameraFOV(withViewSize: size)
+        }) { context in
+            if !context.isCancelled {
+                SCNTransaction.animationDuration = 0
+            }
+        }
+    }
+
 }
 
 extension Swifty360View: Swifty360CameraControllerDelegate {

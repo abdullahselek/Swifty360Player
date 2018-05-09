@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/abdullahselek/Swifty360Player.svg?branch=master)](https://travis-ci.org/abdullahselek/Swifty360Player)
-![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Swifty360Player.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Swifty360Player.svg)](https://cocoapods.org/pods/Swifty360Player)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://img.shields.io/dub/l/vibe-d.svg)
 

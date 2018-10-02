@@ -99,7 +99,7 @@ func Swifty360DeviceMotionCalculation(position: CGPoint,
     }
 
     var position = position
-    if UIInterfaceOrientationIsLandscape(orientation) {
+    if orientation.isLandscape {
         if orientation == .landscapeLeft {
             position = CGPoint(x: position.x + CGFloat(rotationRate.x * Swifty360EulerAngleCalculationRotationRateDampingFactor * -1),
                                y: position.y + CGFloat(rotationRate.y * Swifty360EulerAngleCalculationRotationRateDampingFactor))

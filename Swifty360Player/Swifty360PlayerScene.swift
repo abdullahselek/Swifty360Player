@@ -28,7 +28,7 @@ import AVFoundation
 
 open class Swifty360PlayerScene: SCNScene {
 
-    open let camera = SCNCamera()
+    public let camera = SCNCamera()
     private var videoPlaybackIsPaused: Bool!
     private var videoNode: SwiftySKVideoNode!
     private var cameraNode: SCNNode! {

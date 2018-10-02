@@ -92,9 +92,12 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     private var sceneView: SCNView!
     private var playerScene: Swifty360PlayerScene!
     private var cameraController: Swifty360CameraController!
+    @IBOutlet var playerView: UIView!
 
     public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement) {
-        super.init(nibName: nil, bundle: nil)
+        let bundleIdentifier = "com.abdullahselek.Swifty360Player"
+        let bundle = Bundle(identifier: bundleIdentifier)
+        super.init(nibName: "Swifty360ViewController", bundle: bundle)
         self.player = player
         self.motionManager = motionManager
     }
@@ -121,7 +124,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         sceneView.backgroundColor = UIColor.black
         sceneView.isOpaque = true
         sceneView.delegate = self
-        view.addSubview(sceneView)
+        playerView.addSubview(sceneView)
 
         sceneView.isPlaying = true
 
@@ -175,7 +178,12 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     }
 
     internal func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
-        let screenBounds = UIScreen.main.bounds
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.frame = playerView.layer.bounds
+        playerView.layer.addSublayer(playerLayer)
+
+        let screenBounds = playerView.bounds
         let initialSceneFrame = sceneBoundsForScreenBounds(screenBounds: screenBounds)
         underlyingSceneSize = initialSceneFrame.size
         sceneView = SCNView(frame: initialSceneFrame)

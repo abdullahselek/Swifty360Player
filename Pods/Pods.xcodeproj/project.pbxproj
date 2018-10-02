@@ -3,27 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00CC9E22751C0DB5EB4F3F921383E802 /* Swifty360Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FBDC74EC20631C75B156CA3735575691 /* Swifty360Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		00CC9E22751C0DB5EB4F3F921383E802 /* Swifty360Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1882E95CE41257504F72291AF0D02C22 /* Swifty360Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		049B1CC16FAB1B3B62AA435AD528D64A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		11699D451A4844D8E28A8175BEEDB81A /* Pods-Sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 05ADF3967EEEF63EAFBFA31B16D0A5BD /* Pods-Sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		21B71AF7652D9F5ADA7A2BBA26713B43 /* Swifty360PlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616C2BDDDDCD5306E0783B9857C13EC4 /* Swifty360PlayerScene.swift */; };
-		2ADE99453F7C1F8554B4A4470E4B6313 /* Swifty360CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E945D239D1036425F8CF78CD75FAB /* Swifty360CameraController.swift */; };
-		33A265200D99A91949819E802478687C /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C714437BDF79A50DF6C15561D4609D7 /* Swifty360EulerAngleCalculations.swift */; };
-		36295B046E593EA784359DA4F659F8F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		37A97FE2A2402C189862804CE970521F /* Swifty360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BB31D6F43ED5FC3DC38D5990DC06C9 /* Swifty360ViewController.swift */; };
-		5E53049C338EE134142BA5A113907644 /* Swifty360MotionManagerObserverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D361E7DC8F0DD36FBC4A1287EEF60E5 /* Swifty360MotionManagerObserverItem.swift */; };
+		21B71AF7652D9F5ADA7A2BBA26713B43 /* Swifty360PlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE2BF6202A7E5EE038AB4ABB17EDFCF /* Swifty360PlayerScene.swift */; };
+		2ADE99453F7C1F8554B4A4470E4B6313 /* Swifty360CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52589956B29DADE39B5E22DAD7628D98 /* Swifty360CameraController.swift */; };
+		33A265200D99A91949819E802478687C /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282ACF66CA677493798A524F6D1DCBF6 /* Swifty360EulerAngleCalculations.swift */; };
+		37A97FE2A2402C189862804CE970521F /* Swifty360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D61D65A1DD8D73EDABBD109DF787E0 /* Swifty360ViewController.swift */; };
+		5E53049C338EE134142BA5A113907644 /* Swifty360MotionManagerObserverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543BE66363DE17B1C86D817ABDB41577 /* Swifty360MotionManagerObserverItem.swift */; };
 		7499E42A4F7EA89E5A48AC7018618D4F /* Pods-Sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBD359E5308AFF8EB3DFE040393E1BC /* Pods-Sample-dummy.m */; };
-		7D22EB9A9D0C3E56B0DED583AD2D0825 /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49185801C283BE11C43ABD2FB8F248E /* Float++.swift */; };
-		8F975787593CFED645AEBCBFD6B7A6BE /* Swifty360MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DEFF904A45E91387802B2AD49B743 /* Swifty360MotionManager.swift */; };
-		9ECEF07C4DAE0016176C7F8515D81745 /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E141E14483BD34C64593F23A553C1F /* SwiftySKVideoNode.swift */; };
-		9ED3D68999C8C11AC8640754828E9A66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		A15DF99D584066C461BA064EA69B37D1 /* Swifty360View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C000DF1D157A703C1DBA47D4CF9CEC2 /* Swifty360View.swift */; };
-		A7344746B0775BE3120DDDAD4F605A6E /* Swifty360Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC9B501A43BB1D805F8DB78610D9DF4 /* Swifty360Types.swift */; };
-		AE2B716F102255FB1025F66562696F97 /* Swifty360Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6200F6052FFB4F8B3FE32698E9A700 /* Swifty360Player-dummy.m */; };
-		BCF3A4FC707A35C7B232C348A614CC5F /* Swifty360CameraPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6754A741E789E0F4EAB0BEF90704457F /* Swifty360CameraPanGestureRecognizer.swift */; };
+		7D22EB9A9D0C3E56B0DED583AD2D0825 /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A01014C29C54AB5C8CAAC07B305EF8A /* Float++.swift */; };
+		8BCA5BBAE31D9892EFBE31762620F07B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		8F975787593CFED645AEBCBFD6B7A6BE /* Swifty360MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECB72BBB8B0B2F181EF544C72F51EFA /* Swifty360MotionManager.swift */; };
+		9ECEF07C4DAE0016176C7F8515D81745 /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C76B38C99BAA3FAED8C1E117C50159 /* SwiftySKVideoNode.swift */; };
+		A15DF99D584066C461BA064EA69B37D1 /* Swifty360View.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11F0A41EF2CAE06274FF90A6096B182 /* Swifty360View.swift */; };
+		A7344746B0775BE3120DDDAD4F605A6E /* Swifty360Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A16C1AE1727584FAB03E14F529A7E27 /* Swifty360Types.swift */; };
+		AE2B716F102255FB1025F66562696F97 /* Swifty360Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 740D87B28FC9E3091AF7B8484BDEC067 /* Swifty360Player-dummy.m */; };
+		BCF3A4FC707A35C7B232C348A614CC5F /* Swifty360CameraPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB2A01C48F1D37C55F28A56F4940B0D /* Swifty360CameraPanGestureRecognizer.swift */; };
+		DF60D1D59C032270E534CF83779A82D4 /* Swifty360ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6B4A221DCC26A4CA3F03FF3AAD29021 /* Swifty360ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,39 +39,40 @@
 
 /* Begin PBXFileReference section */
 		029EC8CD778B6391C2EF50C7080973E4 /* Pods-Sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sample.modulemap"; sourceTree = "<group>"; };
+		03699D9F4B5F6F4B1C05D9393B270773 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05ADF3967EEEF63EAFBFA31B16D0A5BD /* Pods-Sample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sample-umbrella.h"; sourceTree = "<group>"; };
 		14C453EE81ABA0F0F9CBC8EE8A36091B /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		1F5F5E01EA6ACD6D2225BE46F3FCB28D /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		422B5E9AC3ED191E5A8B34579A4907A8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		49FC17C3E58D1B554EA3C4765E88DCB2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4AC9B501A43BB1D805F8DB78610D9DF4 /* Swifty360Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360Types.swift; path = Swifty360Player/Swifty360Types.swift; sourceTree = "<group>"; };
+		1882E95CE41257504F72291AF0D02C22 /* Swifty360Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-umbrella.h"; sourceTree = "<group>"; };
+		1F5F5E01EA6ACD6D2225BE46F3FCB28D /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sample.framework; path = "Pods-Sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		282ACF66CA677493798A524F6D1DCBF6 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360EulerAngleCalculations.swift; path = Swifty360Player/Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
+		31C2EA2FB156991D6613CA2682837E86 /* Swifty360Player.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = Swifty360Player.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		31C6B7372405A99077359228C2676E03 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		52589956B29DADE39B5E22DAD7628D98 /* Swifty360CameraController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraController.swift; path = Swifty360Player/Swifty360CameraController.swift; sourceTree = "<group>"; };
+		543BE66363DE17B1C86D817ABDB41577 /* Swifty360MotionManagerObserverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManagerObserverItem.swift; path = Swifty360Player/Swifty360MotionManagerObserverItem.swift; sourceTree = "<group>"; };
 		56BDD699012DC0865CFABEA33810DC6B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C000DF1D157A703C1DBA47D4CF9CEC2 /* Swifty360View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360View.swift; path = Swifty360Player/Swifty360View.swift; sourceTree = "<group>"; };
-		5D361E7DC8F0DD36FBC4A1287EEF60E5 /* Swifty360MotionManagerObserverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManagerObserverItem.swift; path = Swifty360Player/Swifty360MotionManagerObserverItem.swift; sourceTree = "<group>"; };
-		600C55A4338E5F0EBB850A53D0B0F8BF /* Swifty360Player.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swifty360Player.xcconfig; sourceTree = "<group>"; };
-		616C2BDDDDCD5306E0783B9857C13EC4 /* Swifty360PlayerScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360PlayerScene.swift; path = Swifty360Player/Swifty360PlayerScene.swift; sourceTree = "<group>"; };
-		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6754A741E789E0F4EAB0BEF90704457F /* Swifty360CameraPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraPanGestureRecognizer.swift; path = Swifty360Player/Swifty360CameraPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		6C714437BDF79A50DF6C15561D4609D7 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360EulerAngleCalculations.swift; path = Swifty360Player/Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6E24F5740282704524CB56319A8FF44D /* Pods-Sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sample-frameworks.sh"; sourceTree = "<group>"; };
-		70C2B9B0258E9638117F7E15C86A504C /* Swifty360Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-prefix.pch"; sourceTree = "<group>"; };
-		7A6200F6052FFB4F8B3FE32698E9A700 /* Swifty360Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swifty360Player-dummy.m"; sourceTree = "<group>"; };
-		88E141E14483BD34C64593F23A553C1F /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftySKVideoNode.swift; path = Swifty360Player/SwiftySKVideoNode.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		72C76B38C99BAA3FAED8C1E117C50159 /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftySKVideoNode.swift; path = Swifty360Player/SwiftySKVideoNode.swift; sourceTree = "<group>"; };
+		740D87B28FC9E3091AF7B8484BDEC067 /* Swifty360Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swifty360Player-dummy.m"; sourceTree = "<group>"; };
+		7A01014C29C54AB5C8CAAC07B305EF8A /* Float++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float++.swift"; path = "Swifty360Player/Float++.swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9A16C1AE1727584FAB03E14F529A7E27 /* Swifty360Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360Types.swift; path = Swifty360Player/Swifty360Types.swift; sourceTree = "<group>"; };
 		9E70CA329077CD04620244FCCCC45B68 /* Pods-Sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sample-acknowledgements.plist"; sourceTree = "<group>"; };
-		AB2DEFF904A45E91387802B2AD49B743 /* Swifty360MotionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManager.swift; path = Swifty360Player/Swifty360MotionManager.swift; sourceTree = "<group>"; };
-		B49185801C283BE11C43ABD2FB8F248E /* Float++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float++.swift"; path = "Swifty360Player/Float++.swift"; sourceTree = "<group>"; };
+		ABE2BF6202A7E5EE038AB4ABB17EDFCF /* Swifty360PlayerScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360PlayerScene.swift; path = Swifty360Player/Swifty360PlayerScene.swift; sourceTree = "<group>"; };
 		B591D04D9C5B71D3CB990ABB7434B49A /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		C40987AD3707BC6EB3A07315A64B34D7 /* Swifty360Player.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = Swifty360Player.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B6B4A221DCC26A4CA3F03FF3AAD29021 /* Swifty360ViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = Swifty360ViewController.xib; path = Swifty360Player/Swifty360ViewController.xib; sourceTree = "<group>"; };
+		BECB72BBB8B0B2F181EF544C72F51EFA /* Swifty360MotionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManager.swift; path = Swifty360Player/Swifty360MotionManager.swift; sourceTree = "<group>"; };
+		C2D61D65A1DD8D73EDABBD109DF787E0 /* Swifty360ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360ViewController.swift; path = Swifty360Player/Swifty360ViewController.swift; sourceTree = "<group>"; };
 		C623B2FE5098D9B83CC1030CC36EC935 /* Pods-Sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C8BB31D6F43ED5FC3DC38D5990DC06C9 /* Swifty360ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360ViewController.swift; path = Swifty360Player/Swifty360ViewController.swift; sourceTree = "<group>"; };
-		C8FBC6FD9F45BC6432FD81F6958C800E /* Swifty360Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swifty360Player.modulemap; sourceTree = "<group>"; };
+		C7EB4E7591291EE375352F3A41C69E03 /* Swifty360Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-prefix.pch"; sourceTree = "<group>"; };
 		CFBD359E5308AFF8EB3DFE040393E1BC /* Pods-Sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sample-dummy.m"; sourceTree = "<group>"; };
-		D08E945D239D1036425F8CF78CD75FAB /* Swifty360CameraController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraController.swift; path = Swifty360Player/Swifty360CameraController.swift; sourceTree = "<group>"; };
-		DC47C336CF07F3CFCA5CCF47C5771B35 /* Swifty360Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swifty360Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D11F0A41EF2CAE06274FF90A6096B182 /* Swifty360View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360View.swift; path = Swifty360Player/Swifty360View.swift; sourceTree = "<group>"; };
+		D414B187624F83AB9B2D7E8BF4691F5B /* Swifty360Player.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swifty360Player.xcconfig; sourceTree = "<group>"; };
+		D9197324494D696971ACD3A21D5A6590 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DC47C336CF07F3CFCA5CCF47C5771B35 /* Swifty360Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swifty360Player.framework; path = Swifty360Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0915B5DCDBC09F9744A0D76788D5FD8 /* Swifty360Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swifty360Player.modulemap; sourceTree = "<group>"; };
 		E6595EB651D858E5E1B431970B17171B /* Pods-Sample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sample-resources.sh"; sourceTree = "<group>"; };
-		F8AC402256D304F389A35534FB3F2E4C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		FBDC74EC20631C75B156CA3735575691 /* Swifty360Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-umbrella.h"; sourceTree = "<group>"; };
+		FBB2A01C48F1D37C55F28A56F4940B0D /* Swifty360CameraPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraPanGestureRecognizer.swift; path = Swifty360Player/Swifty360CameraPanGestureRecognizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36295B046E593EA784359DA4F659F8F2 /* Foundation.framework in Frameworks */,
+				8BCA5BBAE31D9892EFBE31762620F07B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9ED3D68999C8C11AC8640754828E9A66 /* Foundation.framework in Frameworks */,
+				049B1CC16FAB1B3B62AA435AD528D64A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +102,46 @@
 				DC47C336CF07F3CFCA5CCF47C5771B35 /* Swifty360Player.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2568B2A00396D769CC2C40722A389BDF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				03699D9F4B5F6F4B1C05D9393B270773 /* Info.plist */,
+				E0915B5DCDBC09F9744A0D76788D5FD8 /* Swifty360Player.modulemap */,
+				D414B187624F83AB9B2D7E8BF4691F5B /* Swifty360Player.xcconfig */,
+				740D87B28FC9E3091AF7B8484BDEC067 /* Swifty360Player-dummy.m */,
+				C7EB4E7591291EE375352F3A41C69E03 /* Swifty360Player-prefix.pch */,
+				1882E95CE41257504F72291AF0D02C22 /* Swifty360Player-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Pods/Target Support Files/Swifty360Player";
+			sourceTree = "<group>";
+		};
+		37BC3CDA238B65BBA2282FB590AD465F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D9197324494D696971ACD3A21D5A6590 /* LICENSE */,
+				31C6B7372405A99077359228C2676E03 /* README.md */,
+				31C2EA2FB156991D6613CA2682837E86 /* Swifty360Player.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		54B946BFFF95C09CF91F85D11E0B52D7 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7A589F0316CD193D7ABFD93ED2C6BDE /* Swifty360Player */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		782D00A8A8BAFCBA41AE884CB3D7898F /* Pods-Sample */ = {
@@ -124,32 +166,11 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				F076E72F440E46ACCEFA36BE4BA6C8EF /* Development Pods */,
+				54B946BFFF95C09CF91F85D11E0B52D7 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				03181473BFDFF563456E61E211BB87D8 /* Products */,
 				A8614ADDDA2C845A05B4D5D16AB12C48 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8BAE0E789ED8B31F7F5CC651016122DC /* Swifty360Player */ = {
-			isa = PBXGroup;
-			children = (
-				B49185801C283BE11C43ABD2FB8F248E /* Float++.swift */,
-				D08E945D239D1036425F8CF78CD75FAB /* Swifty360CameraController.swift */,
-				6754A741E789E0F4EAB0BEF90704457F /* Swifty360CameraPanGestureRecognizer.swift */,
-				6C714437BDF79A50DF6C15561D4609D7 /* Swifty360EulerAngleCalculations.swift */,
-				AB2DEFF904A45E91387802B2AD49B743 /* Swifty360MotionManager.swift */,
-				5D361E7DC8F0DD36FBC4A1287EEF60E5 /* Swifty360MotionManagerObserverItem.swift */,
-				616C2BDDDDCD5306E0783B9857C13EC4 /* Swifty360PlayerScene.swift */,
-				4AC9B501A43BB1D805F8DB78610D9DF4 /* Swifty360Types.swift */,
-				5C000DF1D157A703C1DBA47D4CF9CEC2 /* Swifty360View.swift */,
-				C8BB31D6F43ED5FC3DC38D5990DC06C9 /* Swifty360ViewController.swift */,
-				88E141E14483BD34C64593F23A553C1F /* SwiftySKVideoNode.swift */,
-				C89A8D8FF1DF84DD823186F31690AAE0 /* Pod */,
-				E252E2EE4225AE3E6A8DA64D0110B3D0 /* Support Files */,
-			);
-			name = Swifty360Player;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		A8614ADDDA2C845A05B4D5D16AB12C48 /* Targets Support Files */ = {
@@ -160,52 +181,42 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		B64D411BF33403F0D6AF6B4857B1E7F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B6B4A221DCC26A4CA3F03FF3AAD29021 /* Swifty360ViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C89A8D8FF1DF84DD823186F31690AAE0 /* Pod */ = {
+		E7A589F0316CD193D7ABFD93ED2C6BDE /* Swifty360Player */ = {
 			isa = PBXGroup;
 			children = (
-				422B5E9AC3ED191E5A8B34579A4907A8 /* LICENSE */,
-				F8AC402256D304F389A35534FB3F2E4C /* README.md */,
-				C40987AD3707BC6EB3A07315A64B34D7 /* Swifty360Player.podspec */,
+				7A01014C29C54AB5C8CAAC07B305EF8A /* Float++.swift */,
+				52589956B29DADE39B5E22DAD7628D98 /* Swifty360CameraController.swift */,
+				FBB2A01C48F1D37C55F28A56F4940B0D /* Swifty360CameraPanGestureRecognizer.swift */,
+				282ACF66CA677493798A524F6D1DCBF6 /* Swifty360EulerAngleCalculations.swift */,
+				BECB72BBB8B0B2F181EF544C72F51EFA /* Swifty360MotionManager.swift */,
+				543BE66363DE17B1C86D817ABDB41577 /* Swifty360MotionManagerObserverItem.swift */,
+				ABE2BF6202A7E5EE038AB4ABB17EDFCF /* Swifty360PlayerScene.swift */,
+				9A16C1AE1727584FAB03E14F529A7E27 /* Swifty360Types.swift */,
+				D11F0A41EF2CAE06274FF90A6096B182 /* Swifty360View.swift */,
+				C2D61D65A1DD8D73EDABBD109DF787E0 /* Swifty360ViewController.swift */,
+				72C76B38C99BAA3FAED8C1E117C50159 /* SwiftySKVideoNode.swift */,
+				37BC3CDA238B65BBA2282FB590AD465F /* Pod */,
+				B64D411BF33403F0D6AF6B4857B1E7F4 /* Resources */,
+				2568B2A00396D769CC2C40722A389BDF /* Support Files */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E252E2EE4225AE3E6A8DA64D0110B3D0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				49FC17C3E58D1B554EA3C4765E88DCB2 /* Info.plist */,
-				C8FBC6FD9F45BC6432FD81F6958C800E /* Swifty360Player.modulemap */,
-				600C55A4338E5F0EBB850A53D0B0F8BF /* Swifty360Player.xcconfig */,
-				7A6200F6052FFB4F8B3FE32698E9A700 /* Swifty360Player-dummy.m */,
-				70C2B9B0258E9638117F7E15C86A504C /* Swifty360Player-prefix.pch */,
-				FBDC74EC20631C75B156CA3735575691 /* Swifty360Player-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/Swifty360Player";
-			sourceTree = "<group>";
-		};
-		F076E72F440E46ACCEFA36BE4BA6C8EF /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8BAE0E789ED8B31F7F5CC651016122DC /* Swifty360Player */,
-			);
-			name = "Development Pods";
+			name = Swifty360Player;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +265,7 @@
 			buildPhases = (
 				8052C94A11FEACA36C9AF21155F65C67 /* Sources */,
 				714E06AD0D7C3C8CE18C2784818411E5 /* Frameworks */,
+				3774B77A0563E0C86C7A2BBEFD8B7D41 /* Resources */,
 				B5F2344057E51E8FA518B2DE1A52E17F /* Headers */,
 			);
 			buildRules = (
@@ -273,11 +285,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					BE7F0A7555F28900FE368C4458037AB7 = {
-						LastSwiftMigration = 1000;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -296,6 +303,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3774B77A0563E0C86C7A2BBEFD8B7D41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF60D1D59C032270E534CF83779A82D4 /* Swifty360ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3234887DC8786D085678A153EBAF6ACC /* Sources */ = {
@@ -337,9 +355,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1EA523CD780063E31C8B354BFDAEB680 /* Release */ = {
+		2A2748273E5238D6EA2218B554F78551 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600C55A4338E5F0EBB850A53D0B0F8BF /* Swifty360Player.xcconfig */;
+			baseConfigurationReference = D414B187624F83AB9B2D7E8BF4691F5B /* Swifty360Player.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -357,55 +375,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Swifty360Player/Swifty360Player.modulemap";
+				PRODUCT_MODULE_NAME = Swifty360Player;
 				PRODUCT_NAME = Swifty360Player;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		44AB79D6B0C501E9A867823A3014CFAE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14C453EE81ABA0F0F9CBC8EE8A36091B /* Pods-Sample.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Sample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Sample/Pods-Sample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Sample;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		49B5A78DBE571998053070754D3695E8 /* Release */ = {
+		553022A828EE1991F07D2D73F565AEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -437,132 +420,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_VERSION = 4.0;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		A3E1940EA886F4FF8F317037B2C4B957 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B591D04D9C5B71D3CB990ABB7434B49A /* Pods-Sample.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Sample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Sample/Pods-Sample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Sample;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BF1D30D5414126DAF5AB97F443F1067D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 600C55A4338E5F0EBB850A53D0B0F8BF /* Swifty360Player.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Swifty360Player/Swifty360Player-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Swifty360Player/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Swifty360Player/Swifty360Player.modulemap";
-				PRODUCT_NAME = Swifty360Player;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DD369323FD85CB26347C0D75C75D837F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -587,13 +445,175 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
+		};
+		58CE816B060A41D32CEC095441D0E3E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		892F706B3545B14CE8E767D72A4FB00D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D414B187624F83AB9B2D7E8BF4691F5B /* Swifty360Player.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Swifty360Player/Swifty360Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Swifty360Player/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Swifty360Player/Swifty360Player.modulemap";
+				PRODUCT_MODULE_NAME = Swifty360Player;
+				PRODUCT_NAME = Swifty360Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D2DD4A2F18B044CA8B94770B714CA882 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B591D04D9C5B71D3CB990ABB7434B49A /* Pods-Sample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sample/Pods-Sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D723A1CAC6B08D89CFD4B81E88070E27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14C453EE81ABA0F0F9CBC8EE8A36091B /* Pods-Sample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Sample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Sample/Pods-Sample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -601,8 +621,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD369323FD85CB26347C0D75C75D837F /* Debug */,
-				49B5A78DBE571998053070754D3695E8 /* Release */,
+				553022A828EE1991F07D2D73F565AEF8 /* Debug */,
+				58CE816B060A41D32CEC095441D0E3E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -610,8 +630,8 @@
 		7A29947093ED980508BB501678EBEA0D /* Build configuration list for PBXNativeTarget "Swifty360Player" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BF1D30D5414126DAF5AB97F443F1067D /* Debug */,
-				1EA523CD780063E31C8B354BFDAEB680 /* Release */,
+				2A2748273E5238D6EA2218B554F78551 /* Debug */,
+				892F706B3545B14CE8E767D72A4FB00D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -619,8 +639,8 @@
 		9A7EFC8940109ECD34C148D5B8BBBB6B /* Build configuration list for PBXNativeTarget "Pods-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3E1940EA886F4FF8F317037B2C4B957 /* Debug */,
-				44AB79D6B0C501E9A867823A3014CFAE /* Release */,
+				D2DD4A2F18B044CA8B94770B714CA882 /* Debug */,
+				D723A1CAC6B08D89CFD4B81E88070E27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

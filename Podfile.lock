@@ -1,16 +1,16 @@
 PODS:
-  - Swifty360Player (0.2)
+  - Swifty360Player (0.2.1)
 
 DEPENDENCIES:
   - Swifty360Player (from `.`)
 
 EXTERNAL SOURCES:
   Swifty360Player:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
-  Swifty360Player: 0e1539ca90e8038e935f34e564b1cabdc67a6d1a
+  Swifty360Player: ebf4111f52af0cf04ada1a4a65e7bb0957b5ef15
 
 PODFILE CHECKSUM: 42a7ad3b672615519c1095459e88f114feec142c
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

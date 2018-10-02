@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         player.play()
 
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(reorientVerticalCameraAngle))
-        view.addGestureRecognizer(tapGestureRecognizer)
+        swifty360ViewController.view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     @objc func reorientVerticalCameraAngle() {

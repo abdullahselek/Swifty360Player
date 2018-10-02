@@ -25,9 +25,9 @@ class ViewController: UIViewController {
         let motionManager = Swifty360MotionManager.shared
         swifty360ViewController = Swifty360ViewController(withAVPlayer: player, motionManager: motionManager)
 
-        addChildViewController(swifty360ViewController)
+        addChild(swifty360ViewController)
         view.addSubview(swifty360ViewController.view)
-        swifty360ViewController.didMove(toParentViewController: self)
+        swifty360ViewController.didMove(toParent: self)
 
         player.play()
 

@@ -22,7 +22,6 @@
 		1CD2A5351F99E68200419DCF /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2A5341F99E68200419DCF /* SwiftySKVideoNode.swift */; };
 		1CD2A5371F99FA8600419DCF /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2A5361F99FA8600419DCF /* Float++.swift */; };
 		1CD2A5391F9A1DBF00419DCF /* Swifty360EulerAngleCalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2A5381F9A1DBF00419DCF /* Swifty360EulerAngleCalculationsTests.swift */; };
-		83471C1221636A65001E5461 /* Swifty360ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83471C1121636A65001E5461 /* Swifty360ViewController.xib */; };
 		A449C3361F92480C002482F0 /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A449C3351F92480C002482F0 /* Swifty360EulerAngleCalculations.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +54,6 @@
 		1CD2A5341F99E68200419DCF /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftySKVideoNode.swift; sourceTree = "<group>"; };
 		1CD2A5361F99FA8600419DCF /* Float++.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Float++.swift"; sourceTree = "<group>"; };
 		1CD2A5381F9A1DBF00419DCF /* Swifty360EulerAngleCalculationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360EulerAngleCalculationsTests.swift; sourceTree = "<group>"; };
-		83471C1121636A65001E5461 /* Swifty360ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Swifty360ViewController.xib; sourceTree = "<group>"; };
 		A449C3351F92480C002482F0 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +110,6 @@
 				1C0B05181F9B5CAE0061759A /* Swifty360ViewController.swift */,
 				1CB04F691FC1C1A0006E7D0F /* Swifty360View.swift */,
 				1CD2A5361F99FA8600419DCF /* Float++.swift */,
-				83471C1121636A65001E5461 /* Swifty360ViewController.xib */,
 			);
 			path = Swifty360Player;
 			sourceTree = "<group>";
@@ -223,7 +220,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83471C1221636A65001E5461 /* Swifty360ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

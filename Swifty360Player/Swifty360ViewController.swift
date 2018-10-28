@@ -92,12 +92,10 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     private var sceneView: SCNView!
     private var playerScene: Swifty360PlayerScene!
     private var cameraController: Swifty360CameraController!
-    @IBOutlet var playerView: UIView!
+    private var playerView = UIView()
 
     public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement) {
-        let bundleIdentifier = "com.abdullahselek.Swifty360Player"
-        let bundle = Bundle(identifier: bundleIdentifier)
-        super.init(nibName: "Swifty360ViewController", bundle: bundle)
+        super.init(nibName: nil, bundle: nil)
         self.player = player
         self.motionManager = motionManager
     }
@@ -116,10 +114,31 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
         view.backgroundColor = UIColor.black
         view.isOpaque = true
-
-        /// Prevent the edges of the "aspect-fill" resized player scene from being
-        /// visible beyond the bounds of self.view.
         view.clipsToBounds = true
+
+        playerView.isUserInteractionEnabled = true
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(playerView)
+
+        let margins = view.layoutMarginsGuide
+        NSLayoutConstraint.activate([
+            playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
+            playerView.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+            ])
+
+        if #available(iOS 11, *) {
+            let guide = view.safeAreaLayoutGuide
+            NSLayoutConstraint.activate([
+                playerView.topAnchor.constraint(equalToSystemSpacingBelow: guide.topAnchor, multiplier: 1.0),
+                guide.bottomAnchor.constraint(equalToSystemSpacingBelow: playerView.bottomAnchor, multiplier: 1.0)
+                ])
+        } else {
+            let standardSpacing = CGFloat(8.0)
+            NSLayoutConstraint.activate([
+                playerView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: standardSpacing),
+                bottomLayoutGuide.topAnchor.constraint(equalTo: playerView.bottomAnchor, constant: standardSpacing)
+                ])
+        }
 
         sceneView.backgroundColor = UIColor.black
         sceneView.isOpaque = true

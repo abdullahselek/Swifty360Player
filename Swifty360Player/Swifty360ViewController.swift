@@ -104,22 +104,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         super.init(coder: aDecoder)
     }
 
-    override open func viewDidLoad() {
-        super.viewDidLoad()
-
-        assert(player != nil, "Swifty360ViewController should have an AVPlayer instance")
-        assert(motionManager != nil, "Swifty360ViewController should have an Swifty360MotionManager instance")
-
-        setup(player: player, motionManager: motionManager)
-
-        view.backgroundColor = UIColor.black
-        view.isOpaque = true
-        view.clipsToBounds = true
-
-        playerView.isUserInteractionEnabled = true
-        playerView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(playerView)
-
+    fileprivate func addPlayerViewConstraints() {
         let margins = view.layoutMarginsGuide
         NSLayoutConstraint.activate([
             playerView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
@@ -139,6 +124,25 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
                 bottomLayoutGuide.topAnchor.constraint(equalTo: playerView.bottomAnchor, constant: standardSpacing)
                 ])
         }
+    }
+
+    override open func viewDidLoad() {
+        super.viewDidLoad()
+
+        assert(player != nil, "Swifty360ViewController should have an AVPlayer instance")
+        assert(motionManager != nil, "Swifty360ViewController should have an Swifty360MotionManager instance")
+
+        setup(player: player, motionManager: motionManager)
+
+        view.backgroundColor = UIColor.black
+        view.isOpaque = true
+        view.clipsToBounds = true
+
+        playerView.isUserInteractionEnabled = true
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(playerView)
+
+        addPlayerViewConstraints()
 
         sceneView.backgroundColor = UIColor.black
         sceneView.isOpaque = true

@@ -1,8 +1,7 @@
-
 Pod::Spec.new do |s|
 
     s.name                  = 'Swifty360Player'
-    s.version               = '0.2.1'
+    s.version               = '0.2.2'
     s.summary               = 'iOS 360-degree video player streaming from an AVPlayer.'
     s.homepage              = 'https://github.com/abdullahselek/Swifty360Player'
     s.license               = {

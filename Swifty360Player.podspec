@@ -17,7 +17,6 @@ Pod::Spec.new do |s|
     }
     s.ios.deployment_target = '11.0'
     s.source_files          = 'Swifty360Player/*.swift'
-    s.resources             = 'Swifty360Player/*.xib'
     s.requires_arc          = true
 
 end

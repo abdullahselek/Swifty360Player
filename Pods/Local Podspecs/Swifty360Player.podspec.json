@@ -18,6 +18,5 @@
     "ios": "11.0"
   },
   "source_files": "Swifty360Player/*.swift",
-  "resources": "Swifty360Player/*.xib",
   "requires_arc": true
 }

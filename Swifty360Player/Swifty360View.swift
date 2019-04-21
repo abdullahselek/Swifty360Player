@@ -95,7 +95,7 @@ open class Swifty360View: UIView {
 
     public init(withFrame frame: CGRect,
                 player: AVPlayer,
-                motionManager: Swifty360MotionManagement) {
+                motionManager: Swifty360MotionManagement?) {
         super.init(frame: frame)
         self.player = player
         self.motionManager = motionManager
@@ -105,7 +105,7 @@ open class Swifty360View: UIView {
         super.init(coder: aDecoder)
     }
 
-    open func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
+    open func setup(player: AVPlayer, motionManager: Swifty360MotionManagement?) {
         let initialSceneFrame = sceneBoundsForScreenBounds(screenBounds: bounds)
         underlyingSceneSize = initialSceneFrame.size
         sceneView = SCNView(frame: initialSceneFrame)

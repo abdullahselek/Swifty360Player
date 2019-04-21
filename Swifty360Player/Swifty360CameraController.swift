@@ -128,7 +128,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
 
      - SeeAlso: `Swifty360MotionManagement`
      */
-    init(withView view: SCNView, motionManager: Swifty360MotionManagement) {
+    init(withView view: SCNView, motionManager: Swifty360MotionManagement?) {
         super.init()
 
         assert(view.pointOfView != nil, "Swifty360CameraController must be initialized with a view with a non-nil pointOfView node.")
@@ -149,12 +149,15 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     }
 
     open func startMotionUpdates() {
+        guard let motionManager = self.motionManager else {
+            return
+        }
         let preferredMotionUpdateInterval = TimeInterval(1.0 / 60.0)
         motionUpdateToken = motionManager.startUpdating(preferredUpdateInterval: preferredMotionUpdateInterval)
     }
 
     open func stopMotionUpdates() {
-        guard let motionUpdateToken = self.motionUpdateToken else {
+        guard let motionManager = self.motionManager, let motionUpdateToken = self.motionUpdateToken else {
             return
         }
         motionManager.stopUpdating(token: motionUpdateToken)
@@ -199,6 +202,10 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
      many times a second during SceneKit rendering updates.
      */
     func updateCameraAngleForCurrentDeviceMotion() {
+        guard let motionManager = self.motionManager else {
+            return
+        }
+
         if isAnimatingReorientation {
             return
         }

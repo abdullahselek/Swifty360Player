@@ -64,7 +64,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
 
     open weak var delegate: Swifty360ViewControllerDelegate?
     open var player: AVPlayer!
-    open var motionManager: Swifty360MotionManagement!
+    open var motionManager: Swifty360MotionManagement?
     open var compassAngle: Float! {
         return cameraController.compassAngle()
     }
@@ -94,7 +94,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     private var cameraController: Swifty360CameraController!
     private var playerView = UIView()
 
-    public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement) {
+    public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement?) {
         super.init(nibName: nil, bundle: nil)
         self.player = player
         self.motionManager = motionManager
@@ -121,7 +121,6 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         super.viewDidLoad()
 
         assert(player != nil, "Swifty360ViewController should have an AVPlayer instance")
-        assert(motionManager != nil, "Swifty360ViewController should have an Swifty360MotionManager instance")
 
         setup(player: player, motionManager: motionManager)
 
@@ -191,7 +190,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
         return CGRect(x: 0.0, y: 0.0, width: maxValue, height: minValue)
     }
 
-    internal func setup(player: AVPlayer, motionManager: Swifty360MotionManagement) {
+    internal func setup(player: AVPlayer, motionManager: Swifty360MotionManagement?) {
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = .resizeAspectFill
         playerLayer.frame = playerView.layer.bounds

@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         let player = AVPlayer(url: videoURL)
 
         let motionManager = Swifty360MotionManager.shared
+        // set motionManager nil to skip motion changes
         swifty360ViewController = Swifty360ViewController(withAVPlayer: player, motionManager: motionManager)
 
         addChild(swifty360ViewController)

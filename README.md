@@ -63,29 +63,17 @@ To integrate Swifty360Player into your Xcode project using Carthage, specify it 
 github "abdullahselek/Swifty360Player" ~> 0.2.3
 ```
 
+Run carthage update to build the framework and drag the built Swifty360Player.framework into your Xcode project.
+
 ## Swift Package Manager
 
+Modify your Package.swift file to include the following dependency:
+
 ```
-// swift-tools-version:5.0
-
-import PackageDescription
-
-let package = Package(
-    name: "Your project name",
-    dependencies: [
-        .package(url: "https://github.com/abdullahselek/Swifty360Player.git", from: "0.2.3"),
-    ],
-    targets: [
-        .target(
-            name: "Your project name",
-            dependencies: ["Swifty360Player"]),
-    ]
-)
+.package(url: "https://github.com/abdullahselek/Swifty360Player.git", from: "0.2.3")
 ```
 
 Run `swift package resolve`
-
-Run carthage update to build the framework and drag the built Swifty360Player.framework into your Xcode project.
 
 ## Example Usage
 

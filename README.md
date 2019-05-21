@@ -16,7 +16,7 @@ iOS 360-degree video player streaming from an AVPlayer.
 | Swifty360Player Version | Minimum iOS Target  | Swift Version |
 |:--------------------:|:---------------------------:|:---------------------------:|
 | 0.2.3 | 11.0 | 5.0 |
-| 0.2.2 | 10.0 | 4.2 |
+| 0.2.2 | 11.0 | 4.2 |
 | 0.2.1 | 10.0 | 4.1 |
 | 0.2 | 10.0 | 4.0 |
 

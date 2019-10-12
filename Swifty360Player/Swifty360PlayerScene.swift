@@ -43,6 +43,7 @@ open class Swifty360PlayerScene: SCNScene {
         super.init()
         self.videoPlaybackIsPaused = true
         self.player = player
+        self.player.automaticallyWaitsToMinimizeStalling = false
         self.rootNode.addChildNode(self.cameraNode)
         let scene = getScene()
         videoNode = getVideoNode(withPlayer: self.player, scene: scene)

@@ -21,6 +21,7 @@ class ViewController: UIViewController {
 
         let videoURL = URL(fileURLWithPath: Bundle.main.path(forResource: "google-help-vr", ofType: "mp4")!)
         let player = AVPlayer(url: videoURL)
+        player.automaticallyWaitsToMinimizeStalling = false
 
         let motionManager = Swifty360MotionManager.shared
         // set motionManager nil to skip motion changes

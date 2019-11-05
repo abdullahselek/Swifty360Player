@@ -98,6 +98,7 @@ open class Swifty360View: UIView {
                 motionManager: Swifty360MotionManagement?) {
         super.init(frame: frame)
         self.player = player
+        self.player.automaticallyWaitsToMinimizeStalling = false
         self.motionManager = motionManager
     }
 

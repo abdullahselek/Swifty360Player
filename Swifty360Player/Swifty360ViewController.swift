@@ -97,6 +97,7 @@ open class Swifty360ViewController: UIViewController, Swifty360CameraControllerD
     public init(withAVPlayer player: AVPlayer, motionManager: Swifty360MotionManagement?) {
         super.init(nibName: nil, bundle: nil)
         self.player = player
+        self.player.automaticallyWaitsToMinimizeStalling = false
         self.motionManager = motionManager
     }
 

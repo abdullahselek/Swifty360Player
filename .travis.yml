@@ -20,6 +20,7 @@ before_install:
 - rvm use $RVM_RUBY_VERSION
 
 install:
+- gem install bundler
 - bundle install
 
 script:

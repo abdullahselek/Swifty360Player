@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0060875FAF5468BD577F44E0E494759C /* Swifty360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B12EB7899E7D35F6C37B85C776C05 /* Swifty360ViewController.swift */; };
-		19999F614F4986ADE6BB5242CFA241FC /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E50B2DAB84C14FC213F5511FB9EDF1 /* Float++.swift */; };
+		0060875FAF5468BD577F44E0E494759C /* Swifty360ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09666639CB46EF1C3EC083BFAD109A5 /* Swifty360ViewController.swift */; };
+		19999F614F4986ADE6BB5242CFA241FC /* Float++.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3261C4C945C7CCC6B21C672AA1F1186 /* Float++.swift */; };
 		37B9BDA3271C39C489C94266E40298D0 /* Pods-Sample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 859A9C3FF8DAF43611B7457FC86B0142 /* Pods-Sample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		490A1CD0126B49CFDB49E364E76FA7C4 /* Swifty360PlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6F38574BED784ACB68AC63E190266 /* Swifty360PlayerScene.swift */; };
-		5A3B6BDA60A6A41109631D6D43FADFE0 /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546843C450B4E58C3BA2E518F7745A43 /* SwiftySKVideoNode.swift */; };
-		68F013B0E6987D2AC4F720D825296885 /* Swifty360CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1131CC52FD4CD2E8817C25E536C8DF76 /* Swifty360CameraController.swift */; };
-		6FED88637CF330911A2C34BD56827D16 /* Swifty360CameraPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACDE7CA1E33292DFD7E83F060AA922B /* Swifty360CameraPanGestureRecognizer.swift */; };
+		490A1CD0126B49CFDB49E364E76FA7C4 /* Swifty360PlayerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446878DDDC778F013F4E2DD9498F8D10 /* Swifty360PlayerScene.swift */; };
+		5A3B6BDA60A6A41109631D6D43FADFE0 /* SwiftySKVideoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E1005F5F53FC8D937FF2AFE8441B804 /* SwiftySKVideoNode.swift */; };
+		68F013B0E6987D2AC4F720D825296885 /* Swifty360CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7ED7A739CE17A95EAE44CC0548D926 /* Swifty360CameraController.swift */; };
+		6FED88637CF330911A2C34BD56827D16 /* Swifty360CameraPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C5BDCF1546191675813A0699736AA0 /* Swifty360CameraPanGestureRecognizer.swift */; };
 		73EF1D39BBCB69A665868DE20DE60549 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		7DBFD9180BE96ED94F38D40F28E273E7 /* Swifty360MotionManagerObserverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D932262F5087E73EF4EEA108E2C5BE84 /* Swifty360MotionManagerObserverItem.swift */; };
-		820A3807357DA26E93CFC8019FC8379C /* Swifty360Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6930D869F163C63001E4257234532B9B /* Swifty360Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8299D722734DB789B076575DFA37E86A /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74A4107F95A636F7E40645371A982782 /* Swifty360EulerAngleCalculations.swift */; };
-		82C0251BB4432162D31683F64055C0CB /* Swifty360View.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB88BA5979D113C8FF5811B9EF03984 /* Swifty360View.swift */; };
-		87D3805484528671C5A24EA2F80B17AF /* Swifty360Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = D387890610AA7D934B425CE884B96A9D /* Swifty360Types.swift */; };
-		8DE02055920B0A44F915CF1BD220F1DC /* Swifty360Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B06D997A9CE19EBD5321B3F23AB77C /* Swifty360Player-dummy.m */; };
+		7DBFD9180BE96ED94F38D40F28E273E7 /* Swifty360MotionManagerObserverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3B4A4FD707857B8A9E00124B165983 /* Swifty360MotionManagerObserverItem.swift */; };
+		820A3807357DA26E93CFC8019FC8379C /* Swifty360Player-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71399C8F889C2FC0E19DEC49F96DED07 /* Swifty360Player-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8299D722734DB789B076575DFA37E86A /* Swifty360EulerAngleCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7126EF89DCA5904856F9146096EFA9 /* Swifty360EulerAngleCalculations.swift */; };
+		82C0251BB4432162D31683F64055C0CB /* Swifty360View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD1D2E650BE4C83C1FDFAEF4823A4D /* Swifty360View.swift */; };
+		87D3805484528671C5A24EA2F80B17AF /* Swifty360Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F60FCABF2CF98BE2D0BB08E5DB67E7F /* Swifty360Types.swift */; };
+		8DE02055920B0A44F915CF1BD220F1DC /* Swifty360Player-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4696C418C8D133C5A7C883C3D0447363 /* Swifty360Player-dummy.m */; };
 		90416A4FED81888C98B6BAC876D88C53 /* Pods-Sample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A03CD5534147A9FD92A24DF4B311437 /* Pods-Sample-dummy.m */; };
 		9EE511A0F1D27CB511F59F2EBD729749 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		EBC6C52482060690513821C4E210F179 /* Swifty360MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD8C5E3B614B654CBA253E4AA2B78A1 /* Swifty360MotionManager.swift */; };
+		EBC6C52482060690513821C4E210F179 /* Swifty360MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9112EF3380625A76D16FE4B6913937 /* Swifty360MotionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,38 +38,39 @@
 
 /* Begin PBXFileReference section */
 		0B1692077B2B61C40A9D996692389C86 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
-		1131CC52FD4CD2E8817C25E536C8DF76 /* Swifty360CameraController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraController.swift; path = Swifty360Player/Swifty360CameraController.swift; sourceTree = "<group>"; };
-		178B12EB7899E7D35F6C37B85C776C05 /* Swifty360ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360ViewController.swift; path = Swifty360Player/Swifty360ViewController.swift; sourceTree = "<group>"; };
-		2ACDE7CA1E33292DFD7E83F060AA922B /* Swifty360CameraPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraPanGestureRecognizer.swift; path = Swifty360Player/Swifty360CameraPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		0D9112EF3380625A76D16FE4B6913937 /* Swifty360MotionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManager.swift; path = Swifty360Player/Swifty360MotionManager.swift; sourceTree = "<group>"; };
+		18625B4716E8C2748C816D2CEB2DB6D6 /* Swifty360Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-prefix.pch"; sourceTree = "<group>"; };
+		1E1005F5F53FC8D937FF2AFE8441B804 /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftySKVideoNode.swift; path = Swifty360Player/SwiftySKVideoNode.swift; sourceTree = "<group>"; };
+		2178E709CC2E7610EE2FAF4ED5FF855A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3DD8C5E3B614B654CBA253E4AA2B78A1 /* Swifty360MotionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManager.swift; path = Swifty360Player/Swifty360MotionManager.swift; sourceTree = "<group>"; };
+		38DD1D2E650BE4C83C1FDFAEF4823A4D /* Swifty360View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360View.swift; path = Swifty360Player/Swifty360View.swift; sourceTree = "<group>"; };
 		3DF87CDBF351C0A5F8589E22A0F52C54 /* Pods-Sample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Sample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3F4CECDA38C08BEAE89304FAF8F47441 /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
-		41F59A77B8F21AE01A3E4E6FE1F7226D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		44053E42CB60A20133DF16CEB2B915AB /* Pods-Sample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sample-acknowledgements.plist"; sourceTree = "<group>"; };
+		446878DDDC778F013F4E2DD9498F8D10 /* Swifty360PlayerScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360PlayerScene.swift; path = Swifty360Player/Swifty360PlayerScene.swift; sourceTree = "<group>"; };
+		4696C418C8D133C5A7C883C3D0447363 /* Swifty360Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swifty360Player-dummy.m"; sourceTree = "<group>"; };
 		46D66FBB724693B89247CC78286D13F4 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Sample.framework; path = "Pods-Sample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		546843C450B4E58C3BA2E518F7745A43 /* SwiftySKVideoNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftySKVideoNode.swift; path = Swifty360Player/SwiftySKVideoNode.swift; sourceTree = "<group>"; };
+		4CF5B1A45A891643D7E74233DE068FD9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		5404BF8D6484B3CF9C76B21CD61CE988 /* Swifty360Player-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Swifty360Player-Info.plist"; sourceTree = "<group>"; };
+		5A7ED7A739CE17A95EAE44CC0548D926 /* Swifty360CameraController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraController.swift; path = Swifty360Player/Swifty360CameraController.swift; sourceTree = "<group>"; };
+		5B7126EF89DCA5904856F9146096EFA9 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360EulerAngleCalculations.swift; path = Swifty360Player/Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
 		5B8F0E1BA87773044E01B972F4CAC79F /* Swifty360Player.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Swifty360Player.framework; path = Swifty360Player.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		63ED9278DEC0D0D692A3B0A41A9E8293 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		6930D869F163C63001E4257234532B9B /* Swifty360Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-umbrella.h"; sourceTree = "<group>"; };
-		74A4107F95A636F7E40645371A982782 /* Swifty360EulerAngleCalculations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360EulerAngleCalculations.swift; path = Swifty360Player/Swifty360EulerAngleCalculations.swift; sourceTree = "<group>"; };
-		75E50B2DAB84C14FC213F5511FB9EDF1 /* Float++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float++.swift"; path = "Swifty360Player/Float++.swift"; sourceTree = "<group>"; };
-		785EC00DDC75BD91289430B66DE49ED6 /* Swifty360Player-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-prefix.pch"; sourceTree = "<group>"; };
-		84B06D997A9CE19EBD5321B3F23AB77C /* Swifty360Player-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Swifty360Player-dummy.m"; sourceTree = "<group>"; };
+		5BDF38318EA8F2DE17CC9162086543CE /* Swifty360Player.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Swifty360Player.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		70AB01B9931516E003A818CBE3C74D81 /* Swifty360Player.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swifty360Player.debug.xcconfig; sourceTree = "<group>"; };
+		71399C8F889C2FC0E19DEC49F96DED07 /* Swifty360Player-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Swifty360Player-umbrella.h"; sourceTree = "<group>"; };
 		859A9C3FF8DAF43611B7457FC86B0142 /* Pods-Sample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Sample-umbrella.h"; sourceTree = "<group>"; };
 		85E691C0024271E2D0092FA1EBACE452 /* Pods-Sample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Sample.modulemap"; sourceTree = "<group>"; };
-		8DF233FA4B668543D9B699433F7AED62 /* Swifty360Player-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Swifty360Player-Info.plist"; sourceTree = "<group>"; };
-		95D6F38574BED784ACB68AC63E190266 /* Swifty360PlayerScene.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360PlayerScene.swift; path = Swifty360Player/Swifty360PlayerScene.swift; sourceTree = "<group>"; };
+		8F60FCABF2CF98BE2D0BB08E5DB67E7F /* Swifty360Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360Types.swift; path = Swifty360Player/Swifty360Types.swift; sourceTree = "<group>"; };
 		9A03CD5534147A9FD92A24DF4B311437 /* Pods-Sample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Sample-dummy.m"; sourceTree = "<group>"; };
 		9AB35F64666C379279CD93A9FF22ED5D /* Pods-Sample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Sample-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A485E54512F35F1F8491412FA6B4B07C /* Swifty360Player.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swifty360Player.xcconfig; sourceTree = "<group>"; };
-		AAB88BA5979D113C8FF5811B9EF03984 /* Swifty360View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360View.swift; path = Swifty360Player/Swifty360View.swift; sourceTree = "<group>"; };
-		C77F0D8C8746D3B0062E81F67BEF0DA0 /* Swifty360Player.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Swifty360Player.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		D2E91A203B500C0CBF9FCD8F8F8E1CD0 /* Swifty360Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swifty360Player.modulemap; sourceTree = "<group>"; };
-		D387890610AA7D934B425CE884B96A9D /* Swifty360Types.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360Types.swift; path = Swifty360Player/Swifty360Types.swift; sourceTree = "<group>"; };
-		D932262F5087E73EF4EEA108E2C5BE84 /* Swifty360MotionManagerObserverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManagerObserverItem.swift; path = Swifty360Player/Swifty360MotionManagerObserverItem.swift; sourceTree = "<group>"; };
+		A3C5BDCF1546191675813A0699736AA0 /* Swifty360CameraPanGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360CameraPanGestureRecognizer.swift; path = Swifty360Player/Swifty360CameraPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		AB3B4A4FD707857B8A9E00124B165983 /* Swifty360MotionManagerObserverItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360MotionManagerObserverItem.swift; path = Swifty360Player/Swifty360MotionManagerObserverItem.swift; sourceTree = "<group>"; };
+		BF8E2BDC6A4EE221F4BB49A4727C0ADE /* Swifty360Player.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Swifty360Player.release.xcconfig; sourceTree = "<group>"; };
+		D3261C4C945C7CCC6B21C672AA1F1186 /* Float++.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Float++.swift"; path = "Swifty360Player/Float++.swift"; sourceTree = "<group>"; };
+		F09666639CB46EF1C3EC083BFAD109A5 /* Swifty360ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swifty360ViewController.swift; path = Swifty360Player/Swifty360ViewController.swift; sourceTree = "<group>"; };
 		F73885550FD8A2CFD84A2FED511FA220 /* Pods-Sample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Sample-frameworks.sh"; sourceTree = "<group>"; };
+		FDFACFAAD91DF0DAD99DCEDEACDD3B3B /* Swifty360Player.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Swifty360Player.modulemap; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,31 +110,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		311EF9B35B0F80CA6036D1CC04433D0F /* Swifty360Player */ = {
+		58A80714D54D7DA8B3B1B1A0DC1C3A5B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				75E50B2DAB84C14FC213F5511FB9EDF1 /* Float++.swift */,
-				1131CC52FD4CD2E8817C25E536C8DF76 /* Swifty360CameraController.swift */,
-				2ACDE7CA1E33292DFD7E83F060AA922B /* Swifty360CameraPanGestureRecognizer.swift */,
-				74A4107F95A636F7E40645371A982782 /* Swifty360EulerAngleCalculations.swift */,
-				3DD8C5E3B614B654CBA253E4AA2B78A1 /* Swifty360MotionManager.swift */,
-				D932262F5087E73EF4EEA108E2C5BE84 /* Swifty360MotionManagerObserverItem.swift */,
-				95D6F38574BED784ACB68AC63E190266 /* Swifty360PlayerScene.swift */,
-				D387890610AA7D934B425CE884B96A9D /* Swifty360Types.swift */,
-				AAB88BA5979D113C8FF5811B9EF03984 /* Swifty360View.swift */,
-				178B12EB7899E7D35F6C37B85C776C05 /* Swifty360ViewController.swift */,
-				546843C450B4E58C3BA2E518F7745A43 /* SwiftySKVideoNode.swift */,
-				CB4ED7B507144897C4E4F6EB55F79EC6 /* Pod */,
-				FB7E04568BF4649DA8D7B53B745709C8 /* Support Files */,
+				FDFACFAAD91DF0DAD99DCEDEACDD3B3B /* Swifty360Player.modulemap */,
+				4696C418C8D133C5A7C883C3D0447363 /* Swifty360Player-dummy.m */,
+				5404BF8D6484B3CF9C76B21CD61CE988 /* Swifty360Player-Info.plist */,
+				18625B4716E8C2748C816D2CEB2DB6D6 /* Swifty360Player-prefix.pch */,
+				71399C8F889C2FC0E19DEC49F96DED07 /* Swifty360Player-umbrella.h */,
+				70AB01B9931516E003A818CBE3C74D81 /* Swifty360Player.debug.xcconfig */,
+				BF8E2BDC6A4EE221F4BB49A4727C0ADE /* Swifty360Player.release.xcconfig */,
 			);
-			name = Swifty360Player;
-			path = ..;
+			name = "Support Files";
+			path = "Pods/Target Support Files/Swifty360Player";
 			sourceTree = "<group>";
 		};
 		613A4BBB74F0C2AADCEB9D7009CF705E /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				311EF9B35B0F80CA6036D1CC04433D0F /* Swifty360Player */,
+				D6D8202351D8AB56306EE5308DACFB43 /* Swifty360Player */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -163,16 +158,6 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CB4ED7B507144897C4E4F6EB55F79EC6 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				63ED9278DEC0D0D692A3B0A41A9E8293 /* LICENSE */,
-				41F59A77B8F21AE01A3E4E6FE1F7226D /* README.md */,
-				C77F0D8C8746D3B0062E81F67BEF0DA0 /* Swifty360Player.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -192,18 +177,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FB7E04568BF4649DA8D7B53B745709C8 /* Support Files */ = {
+		D2273D9B69F62F6AA3DD2D9B8FFC9DD1 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D2E91A203B500C0CBF9FCD8F8F8E1CD0 /* Swifty360Player.modulemap */,
-				A485E54512F35F1F8491412FA6B4B07C /* Swifty360Player.xcconfig */,
-				84B06D997A9CE19EBD5321B3F23AB77C /* Swifty360Player-dummy.m */,
-				8DF233FA4B668543D9B699433F7AED62 /* Swifty360Player-Info.plist */,
-				785EC00DDC75BD91289430B66DE49ED6 /* Swifty360Player-prefix.pch */,
-				6930D869F163C63001E4257234532B9B /* Swifty360Player-umbrella.h */,
+				4CF5B1A45A891643D7E74233DE068FD9 /* LICENSE */,
+				2178E709CC2E7610EE2FAF4ED5FF855A /* README.md */,
+				5BDF38318EA8F2DE17CC9162086543CE /* Swifty360Player.podspec */,
 			);
-			name = "Support Files";
-			path = "Pods/Target Support Files/Swifty360Player";
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		D6D8202351D8AB56306EE5308DACFB43 /* Swifty360Player */ = {
+			isa = PBXGroup;
+			children = (
+				D3261C4C945C7CCC6B21C672AA1F1186 /* Float++.swift */,
+				5A7ED7A739CE17A95EAE44CC0548D926 /* Swifty360CameraController.swift */,
+				A3C5BDCF1546191675813A0699736AA0 /* Swifty360CameraPanGestureRecognizer.swift */,
+				5B7126EF89DCA5904856F9146096EFA9 /* Swifty360EulerAngleCalculations.swift */,
+				0D9112EF3380625A76D16FE4B6913937 /* Swifty360MotionManager.swift */,
+				AB3B4A4FD707857B8A9E00124B165983 /* Swifty360MotionManagerObserverItem.swift */,
+				446878DDDC778F013F4E2DD9498F8D10 /* Swifty360PlayerScene.swift */,
+				8F60FCABF2CF98BE2D0BB08E5DB67E7F /* Swifty360Types.swift */,
+				38DD1D2E650BE4C83C1FDFAEF4823A4D /* Swifty360View.swift */,
+				F09666639CB46EF1C3EC083BFAD109A5 /* Swifty360ViewController.swift */,
+				1E1005F5F53FC8D937FF2AFE8441B804 /* SwiftySKVideoNode.swift */,
+				D2273D9B69F62F6AA3DD2D9B8FFC9DD1 /* Pod */,
+				58A80714D54D7DA8B3B1B1A0DC1C3A5B /* Support Files */,
+			);
+			name = Swifty360Player;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,6 +282,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 27C39FE29946CC54E43299AB72539718 /* Products */;
@@ -349,40 +352,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		042ED9D3424F17264919ABAD9047285A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A485E54512F35F1F8491412FA6B4B07C /* Swifty360Player.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Swifty360Player/Swifty360Player-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Swifty360Player/Swifty360Player-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Swifty360Player/Swifty360Player.modulemap";
-				PRODUCT_MODULE_NAME = Swifty360Player;
-				PRODUCT_NAME = Swifty360Player;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		257497152829C177993B5EC99C1D227A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -443,9 +412,9 @@
 			};
 			name = Release;
 		};
-		50709FDE51FF544DA2F557485B47B43D /* Debug */ = {
+		37940CC7531DADA883E3FA21D56D442D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A485E54512F35F1F8491412FA6B4B07C /* Swifty360Player.xcconfig */;
+			baseConfigurationReference = BF8E2BDC6A4EE221F4BB49A4727C0ADE /* Swifty360Player.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -471,10 +440,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		7BA1B34B203B090FC4BE72109FB0FF2A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -505,6 +475,39 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		95D9978512ABA7DDBB759BB7B625DA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70AB01B9931516E003A818CBE3C74D81 /* Swifty360Player.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Swifty360Player/Swifty360Player-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Swifty360Player/Swifty360Player-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Swifty360Player/Swifty360Player.modulemap";
+				PRODUCT_MODULE_NAME = Swifty360Player;
+				PRODUCT_NAME = Swifty360Player;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -635,8 +638,8 @@
 		9AEDAC6EB4ED43C5B9A47A318DC24BBD /* Build configuration list for PBXNativeTarget "Swifty360Player" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50709FDE51FF544DA2F557485B47B43D /* Debug */,
-				042ED9D3424F17264919ABAD9047285A /* Release */,
+				95D9978512ABA7DDBB759BB7B625DA97 /* Debug */,
+				37940CC7531DADA883E3FA21D56D442D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -7,7 +7,7 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=Swifty360Player.xcworkspace
   - SCHEME=Swifty360Player
-  - SDK=iphonesimulator13.5
+  - SDK=iphonesimulator13.6
   - RUN_TESTS="YES"
   - POD_LINT="NO"
   matrix:

@@ -1,0 +1,21 @@
+name: "Swifty360Player CI"
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  iOS:
+    name: Test Swifty360Player 
+    runs-on: macOS-latest
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_12.2.app/Contents/Developer
+    strategy:
+      matrix:
+        destination: ["OS=14.2,name=iPhone 11 Pro"] #, "OS=12.4,name=iPhone XS", "OS=11.4,name=iPhone X", "OS=10.3.1,name=iPhone SE"]
+    steps:
+      - uses: actions/checkout@v2         
+      - name: iOS - ${{ matrix.destination }}
+        run: set -o pipefail && xcodebuild -workspace "Swifty360Player.xcworkspace" -scheme "Swifty360Player" -destination "${{ matrix.destination }}" clean test | xcpretty

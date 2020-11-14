@@ -7,8 +7,6 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 OUTPUT_DIR=$( mktemp -d )
 COMMON_SETUP="-project ${SCRIPT_DIR}/../Swifty360Player.xcodeproj -scheme Swifty360Player -configuration Release -quiet SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES"
 
-# carthage build --no-skip-current --create-xcframework --configuration "Release" --platform all
-
 # macOS Catalyst
 DERIVED_DATA_PATH=$( mktemp -d )
 xcrun xcodebuild build \
@@ -50,7 +48,6 @@ xcrun xcodebuild -create-xcframework \
 	-output ${OUTPUT_DIR}/Swifty360Player.xcframework
 
 ditto -c -k --keepParent ${OUTPUT_DIR}/Swifty360Player.xcframework Swifty360Player.xcframework.zip
-# mv ${OUTPUT_DIR}/Swifty360Player.xcframework ${BASE_PWD}
 
 echo "✔️ Swifty360Player.xcframework"
 

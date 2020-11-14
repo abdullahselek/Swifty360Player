@@ -213,7 +213,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         guard let rotationRate = motionManager.deviceMotion?.rotationRate else {
             return
         }
-        let orientation =  UIApplication.shared.statusBarOrientation
+        let orientation =  UIWindow.orientation
         let result = Swifty360DeviceMotionCalculation(position: currentPosition,
                                                       rotationRate: rotationRate,
                                                       orientation: orientation,

@@ -75,6 +75,12 @@ Modify your Package.swift file to include the following dependency:
 
 Run `swift package resolve`
 
+## XCFramework
+
+XCFrameworks require Xcode 11 or later and integration is very similar to integration of .framework format. Please use script [scripts/build-framework.sh](scripts/build-framework.sh) to generate binary Swifty360Player.xcframework archive that you can use as a dependency in Xcode.
+
+Swifty360Player.xcframework is a Release (Optimized) binary that offer best available Swift code performance.
+
 ## Example Usage
 
 You just need an `AVPlayer` instance created with a valid video url and a `Swifty360MotionManager` instance. You can use these code snippets in a `UIViewController` instance.

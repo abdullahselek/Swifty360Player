@@ -15,7 +15,7 @@ iOS 360-degree video player streaming from an AVPlayer.
 
 | Swifty360Player Version | Minimum iOS Target  | Swift Version |
 |:--------------------:|:---------------------------:|:---------------------------:|
-| 0.2.4 | 11.0 | 5.x |
+| 0.2.5 | 11.0 | 5.x |
 | 0.2.2 | 11.0 | 4.2 |
 | 0.2.1 | 10.0 | 4.1 |
 | 0.2 | 10.0 | 4.0 |
@@ -36,7 +36,7 @@ platform :ios, '11.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'Swifty360Player', '0.2.4'
+    pod 'Swifty360Player', '0.2.5'
 end
 ```
 
@@ -60,7 +60,7 @@ brew install carthage
 To integrate Swifty360Player into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
-github "abdullahselek/Swifty360Player" ~> 0.2.4
+github "abdullahselek/Swifty360Player" ~> 0.2.5
 ```
 
 Run carthage update to build the framework and drag the built Swifty360Player.framework into your Xcode project.
@@ -70,7 +70,7 @@ Run carthage update to build the framework and drag the built Swifty360Player.fr
 Modify your Package.swift file to include the following dependency:
 
 ```
-.package(url: "https://github.com/abdullahselek/Swifty360Player.git", from: "0.2.4")
+.package(url: "https://github.com/abdullahselek/Swifty360Player.git", from: "0.2.5")
 ```
 
 Run `swift package resolve`

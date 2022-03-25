@@ -171,7 +171,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
         return Swifty360CompassAngleForEulerAngles(eulerAngles: pointOfView.eulerAngles)
     }
 
-    @objc func handlePan(recognizer: UIPanGestureRecognizer) {
+    @objc open func handlePan(recognizer: UIPanGestureRecognizer) {
         if self.isAnimatingReorientation {
             return
         }

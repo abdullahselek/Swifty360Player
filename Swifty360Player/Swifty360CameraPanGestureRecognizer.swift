@@ -28,6 +28,9 @@
  This class is exposed so that host applications can more easily configure interaction with other gesture
  recognizers, without having to refer to specific instances of an Swifty360Player gesture recognizer.
  */
+
+import UIKit
+
 open class Swifty360CameraPanGestureRecognizer: UIPanGestureRecognizer {
 
 }

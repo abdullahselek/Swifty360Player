@@ -26,7 +26,7 @@ import UIKit
 import SceneKit
 import AVFoundation
 
-public protocol Swifty360ViewDelegate: class {
+public protocol Swifty360ViewDelegate: AnyObject {
     func didUpdateCompassAngle(withViewController: Swifty360View, compassAngle: Float)
     func userInitallyMovedCameraViaMethod(withView: Swifty360View, method: Swifty360UserInteractionMethod)
 }

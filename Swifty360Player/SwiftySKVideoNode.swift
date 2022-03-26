@@ -25,7 +25,7 @@
 import SpriteKit
 import AVFoundation
 
-public protocol SwiftySKVideoNodeDelegate: class {
+public protocol SwiftySKVideoNodeDelegate: AnyObject {
     func videoNodeShouldAllowPlaybackToBegin(videoNode: SwiftySKVideoNode) -> Bool
 }
 

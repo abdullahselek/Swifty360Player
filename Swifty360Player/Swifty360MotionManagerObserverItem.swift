@@ -22,6 +22,8 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import Foundation
+
 internal class Swifty360MotionManagerObserverItem {
 
     internal let token: UUID

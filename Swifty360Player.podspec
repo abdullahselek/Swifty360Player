@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
     s.name                  = 'Swifty360Player'
-    s.version               = '0.2.6'
+    s.version               = '0.2.7'
     s.summary               = 'iOS 360-degree video player streaming from an AVPlayer.'
     s.homepage              = 'https://github.com/abdullahselek/Swifty360Player'
     s.license               = {
@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     s.ios.deployment_target = '11.0'
     s.source_files          = 'Swifty360Player/*.swift'
     s.requires_arc          = true
-    s.swift_versions        = ['5.0', '5.1', '5.2', '5.3']
+    s.swift_versions        = ['5']
 
 end

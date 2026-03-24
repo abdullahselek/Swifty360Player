@@ -14,10 +14,10 @@ GEM
     concurrent-ruby (1.2.2)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.8.8)
+    mini_portile2 (2.8.9)
     minitest (5.19.0)
     nanaimo (0.2.6)
-    nokogiri (1.18.8)
+    nokogiri (1.19.1)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     racc (1.8.1)
@@ -43,7 +43,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri (~> 1.18.8)
+  nokogiri (~> 1.19.1)
   slather
   xcpretty
 

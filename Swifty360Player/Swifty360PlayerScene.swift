@@ -76,7 +76,6 @@ open class Swifty360PlayerScene: SCNScene {
                                          height: fabsf(assetDimensions.height.getFloat()).getCGFloat()))
         scene.shouldRasterize = true
         scene.scaleMode = .aspectFit
-        scene.addChild(getVideoNode(withPlayer: player, scene: scene))
         return scene
     }
 

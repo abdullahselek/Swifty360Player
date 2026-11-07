@@ -2,44 +2,61 @@ name: "Swifty360Player CI"
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
+
+permissions:
+  contents: read
 
 jobs:
-  iOS_15_4:
-    name: Xcode 13.2.1
-    runs-on: macos-11
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_13.2.1.app/Contents/Developer
-    strategy:
-      matrix:
-        destination: ["OS=15.2,name=iPhone 13 Pro"]
+  unit-tests:
+    name: Unit tests (iOS Simulator)
+    runs-on: macos-latest
+    timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v2
-      - name: iOS - ${{ matrix.destination }}
-        run: set -o pipefail && xcodebuild -workspace "Swifty360Player.xcworkspace" -scheme "Swifty360Player" -destination "${{ matrix.destination }}" clean test | xcpretty
-  iOS_14_4:
-    name: Xcode 12.4
-    runs-on: macos-10.15
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
-    strategy:
-      matrix:
-        destination: ["OS=14.4,name=iPhone 12 Pro"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: iOS - ${{ matrix.destination }}
-        run: set -o pipefail && xcodebuild -workspace "Swifty360Player.xcworkspace" -scheme "Swifty360Player" -destination "${{ matrix.destination }}" clean test | xcpretty
-  iOS_13_7:
-    name: Xcode 11.7
-    runs-on: macos-10.15
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_11.7.app/Contents/Developer
-    strategy:
-      matrix:
-        destination: ["OS=13.7,name=iPhone 11"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: iOS - ${{ matrix.destination }}
-        run: set -o pipefail && xcodebuild -workspace "Swifty360Player.xcworkspace" -scheme "Swifty360Player" -destination "${{ matrix.destination }}" clean test | xcpretty
+      - uses: actions/checkout@v4
+      - name: Run unit tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          simulator_id="$(python3 - <<'PY'
+          import json
+          import re
+          import subprocess
+          import sys
+
+          payload = json.loads(subprocess.check_output(
+              ["xcrun", "simctl", "list", "devices", "available", "-j"],
+              text=True,
+          ))
+          candidates = []
+          for runtime, devices in payload.get("devices", {}).items():
+              match = re.search(r"iOS[ -](\d+(?:[.-]\d+)*)", runtime)
+              if match is None:
+                  continue
+              version = tuple(int(part) for part in re.split(r"[-.]", match.group(1)))
+              for device in devices:
+                  name = device.get("name", "")
+                  is_available = device.get("isAvailable") in (True, "YES", "true") or device.get("availability") == "(available)"
+                  if is_available and name.startswith("iPhone"):
+                      candidates.append((version, name, device["udid"]))
+
+          if not candidates:
+              sys.exit("No available iPhone iOS Simulator was found.")
+
+          _, name, udid = max(candidates)
+          print(f"Selected simulator: {name} ({udid})", file=sys.stderr)
+          print(udid)
+          PY
+          )"
+          xcrun simctl boot "${simulator_id}" 2>/dev/null || true
+          xcodebuild \
+            -project "Swifty360Player.xcodeproj" \
+            -scheme "Swifty360Player" \
+            -destination "platform=iOS Simulator,id=${simulator_id}" \
+            -derivedDataPath "${RUNNER_TEMP}/Swifty360PlayerDerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            test

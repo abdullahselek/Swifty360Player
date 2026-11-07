@@ -150,7 +150,7 @@ open class Swifty360CameraController: NSObject, UIGestureRecognizerDelegate {
     }
 
     open func startMotionUpdates() {
-        guard let motionManager = self.motionManager else {
+        guard motionUpdateToken == nil, let motionManager = self.motionManager else {
             return
         }
         let preferredMotionUpdateInterval = TimeInterval(1.0 / 60.0)

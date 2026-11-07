@@ -30,7 +30,7 @@ import XCTest
 
 @testable import Swifty360Player
 
-private final class FakeMotionManagerDevice: Swifty360MotionManagerDevice {
+final class FakeMotionManagerDevice: Swifty360MotionManagerDevice {
 
     var isDeviceMotionAvailable = true
     var isDeviceMotionActive = false
@@ -54,7 +54,7 @@ private final class FakeMotionManagerDevice: Swifty360MotionManagerDevice {
 class Swifty360MotionManagerTests: XCTestCase {
 
     var motionManager: Swifty360MotionManager!
-    var motionDevice: FakeMotionManagerDevice!
+    private var motionDevice: FakeMotionManagerDevice!
 
     override func setUp() {
         motionDevice = FakeMotionManagerDevice()

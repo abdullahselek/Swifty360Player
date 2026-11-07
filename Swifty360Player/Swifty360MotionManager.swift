@@ -24,6 +24,18 @@
 
 import CoreMotion
 
+internal protocol Swifty360MotionManagerDevice: AnyObject {
+    var isDeviceMotionAvailable: Bool { get }
+    var isDeviceMotionActive: Bool { get }
+    var deviceMotion: CMDeviceMotion? { get }
+    var deviceMotionUpdateInterval: TimeInterval { get set }
+
+    func startDeviceMotionUpdates()
+    func stopDeviceMotionUpdates()
+}
+
+extension CMMotionManager: Swifty360MotionManagerDevice { }
+
 /**
  Expectations that must be fulfilled by an appliation-wide "wrapper" around
  CMMotionManager for Swifty360Player's use.
@@ -98,12 +110,19 @@ open class Swifty360MotionManager: Swifty360MotionManagement {
     public static let shared = Swifty360MotionManager()
 
     internal var observerItems = [UUID: Swifty360MotionManagerObserverItem]()
-    internal let motionManager = CMMotionManager()
+    internal let motionManager: Swifty360MotionManagerDevice
     internal static let preferredUpdateInterval = TimeInterval(1.0 / 60.0)
 
     // MARK: Init
 
     private init() {
+        let motionManager = CMMotionManager()
+        self.motionManager = motionManager
+        motionManager.deviceMotionUpdateInterval = Swifty360MotionManager.preferredUpdateInterval
+    }
+
+    internal init(motionManager: Swifty360MotionManagerDevice) {
+        self.motionManager = motionManager
         motionManager.deviceMotionUpdateInterval = Swifty360MotionManager.preferredUpdateInterval
     }
 
@@ -138,7 +157,7 @@ open class Swifty360MotionManager: Swifty360MotionManagement {
         let previousCount = observerItems.count
         observerItems.removeValue(forKey: token)
         motionManager.deviceMotionUpdateInterval = resolvedUpdateInterval()
-        if observerItems.count > 0 && previousCount == 0 {
+        if observerItems.isEmpty && previousCount > 0 {
             motionManager.stopDeviceMotionUpdates()
         }
     }

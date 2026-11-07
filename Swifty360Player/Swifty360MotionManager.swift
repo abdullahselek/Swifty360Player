@@ -24,7 +24,7 @@
 
 import CoreMotion
 
-internal protocol Swifty360MotionManagerDevice {
+internal protocol Swifty360MotionManagerDevice: AnyObject {
     var isDeviceMotionAvailable: Bool { get }
     var isDeviceMotionActive: Bool { get }
     var deviceMotion: CMDeviceMotion? { get }

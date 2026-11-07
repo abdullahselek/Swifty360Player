@@ -54,11 +54,7 @@ final class FakeMotionManagerDevice: Swifty360MotionManagerDevice {
 class Swifty360MotionManagerTests: XCTestCase {
 
     var motionManager: Swifty360MotionManager!
-<<<<<<< HEAD
     private var motionDevice: FakeMotionManagerDevice!
-=======
-    var motionDevice: FakeMotionManagerDevice!
->>>>>>> d1eb059 (fix(motion): balance device motion observer lifecycle)
 
     override func setUp() {
         motionDevice = FakeMotionManagerDevice()

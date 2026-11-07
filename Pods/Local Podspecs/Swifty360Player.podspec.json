@@ -15,7 +15,7 @@
     "tag": "0.2.3"
   },
   "platforms": {
-    "ios": "11.0"
+    "ios": "12.0"
   },
   "source_files": "Swifty360Player/*.swift",
   "requires_arc": true,

@@ -32,13 +32,14 @@ jobs:
           ))
           candidates = []
           for runtime, devices in payload.get("devices", {}).items():
-              match = re.fullmatch(r"com\.apple\.CoreSimulator\.SimRuntime\.iOS-(\d+(?:-\d+)*)", runtime)
+              match = re.search(r"iOS[ -](\d+(?:[.-]\d+)*)", runtime)
               if match is None:
                   continue
-              version = tuple(int(part) for part in match.group(1).split("-"))
+              version = tuple(int(part) for part in re.split(r"[-.]", match.group(1)))
               for device in devices:
                   name = device.get("name", "")
-                  if device.get("isAvailable") and name.startswith("iPhone"):
+                  is_available = device.get("isAvailable") in (True, "YES", "true") or device.get("availability") == "(available)"
+                  if is_available and name.startswith("iPhone"):
                       candidates.append((version, name, device["udid"]))
 
           if not candidates:
@@ -49,9 +50,13 @@ jobs:
           print(udid)
           PY
           )"
+          xcrun simctl boot "${simulator_id}" 2>/dev/null || true
           xcodebuild \
-            -workspace "Swifty360Player.xcworkspace" \
+            -project "Swifty360Player.xcodeproj" \
             -scheme "Swifty360Player" \
             -destination "platform=iOS Simulator,id=${simulator_id}" \
             -derivedDataPath "${RUNNER_TEMP}/Swifty360PlayerDerivedData" \
-            clean test
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            test
